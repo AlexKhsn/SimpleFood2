@@ -145,8 +145,8 @@
         color: $orange;
     }
 
-    &__descr { 
-        line-height: 1.5;
+    &__subtitle { 
+        opacity: 1;
     }
 
     &__buttons { 
@@ -260,9 +260,77 @@
 }
 
 
+//------------------------------FEATURES----------------------------------------
 
 
+.features { 
+    padding-top: 120px;
+    
+    &__inner { 
+        padding: 58px 70px 58px 0;
+        background-position: 70px 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 
+    &__content { 
+        max-width: 470px;
+        margin-left: auto;
+
+        & > *:not(:last-child) { 
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title { 
+        text-align: left;
+    }
+
+    &__title-emphasized { 
+        display: block;
+    }
+
+    &__items > *:not(:last-child) { 
+        margin-bottom: 20px;
+    }
+
+    &__item { 
+        position: relative;
+        padding-left: 64px;
+        color: $title;
+        font-size: 24px;
+        line-height: 1.5;
+
+        &::before { 
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 34px;
+            height: 34px;
+            background-position: 0 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        &:nth-child(1)::before { 
+            background-image: url("../images/icons/features/watch.svg");
+        }
+
+        &:nth-child(2)::before { 
+            background-image: url("../images/icons/features/delivery.svg");
+        }
+
+        &:nth-child(3)::before { 
+            background-image: url("../images/icons/features/shop.svg");
+        }
+    }
+
+    &__btn { 
+        max-width: 165px;
+        letter-spacing: 0.54px;
+    }
+}
 
 
 

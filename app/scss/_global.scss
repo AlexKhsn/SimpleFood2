@@ -125,6 +125,12 @@ body {
     color: $title;
 }
 
+.subtitle { 
+    line-height: 1.5;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
 .more { 
     position: relative;
     padding: 0 2px;
