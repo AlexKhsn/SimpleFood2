@@ -5,8 +5,17 @@
 @import 'global';
 
 
+// -----------------------------HEADER-----------------------------------------
+
+
 .header { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
     padding: 57.5px 0;
+    transition: padding 0.3s ease, background-color 0.3s ease;
 
     &__logo { 
         margin-right: auto;
@@ -14,6 +23,11 @@
 
     &__inner { 
         display: flex;
+    }
+
+    &--scroll { 
+        padding: 25px;
+        background-color: #ecedf2;
     }
 }
 
@@ -106,15 +120,12 @@
 
 
 
-// --------------------------------------MAIN-----------------------------------------------------------------
-
-
-
-
 // ------------------------------HERO------------------------------------------
 
 
 .hero { 
+    margin-top: 159px;
+
     &__inner { 
         display: flex;
         flex-direction: column;
@@ -165,8 +176,6 @@
 
 
 .popular { 
-    padding-top: 120px;
-
     &__title { 
         margin-bottom: 60px;
     }
@@ -260,12 +269,10 @@
 }
 
 
-//------------------------------FEATURES----------------------------------------
+//------------------------------FEATURES---------------------------------------
 
 
 .features { 
-    padding-top: 120px;
-    
     &__inner { 
         padding: 58px 70px 58px 0;
         background-position: 70px 0;
@@ -333,12 +340,10 @@
 }
 
 
-//------------------------------RESTAURANTS----------------------------------------
+//------------------------------RESTAURANTS------------------------------------
 
 
 .restaurants { 
-    padding-top: 120px;
-
     &__title { 
         margin-bottom: 45px;
     }
@@ -355,12 +360,11 @@
 }
 
 
-//------------------------------TESTIMONIALS----------------------------------------
+//------------------------------TESTIMONIALS-----------------------------------
 
 
 .testimonials { 
     position: relative;
-    padding-top: 120px;
 
     &__title { 
         margin-bottom: 45px;
@@ -538,13 +542,64 @@
 }
 
 
+//-----------------------------------APP---------------------------------------
 
 
+.app { 
+    padding-top: 135px;
 
-// -------------------------------------FOOTER-----------------------------------------------------------------
-.footer { 
-    padding-top: 120px;
+    &__inner { 
+        background-position: right;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &__content { 
+        padding: 40px 0;
+        max-width: 540px;
+    }
+
+    &__title { 
+        text-align: left;
+        margin-bottom: 45px;
+    }
+
+    &__subtitle { 
+        margin-bottom: 30px;
+    }
+
+    &__links { 
+        display: flex;
+        
+        & > *:not(:last-child) { 
+            margin-right: 30px;
+        }
+    }
+
+    &__link { 
+        height: 40px;
+        border-radius: 5px;
+        background-position: 0 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &__link-app-store { 
+        max-width: 120px;
+        width: 100%;
+        background-image: url("../images/icons/app/app-store.svg");
+    }
+
+    &__link-google-play { 
+        max-width: 135px;
+        width: 100%;
+        background-image: url("../images/icons/app/google-play.svg");
+    }
 }
+
+
+// ---------------------------------FOOTER-------------------------------------
+
 
 .footer-top { 
     position: relative;

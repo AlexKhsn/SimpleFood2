@@ -32,6 +32,10 @@ body {
     overflow: hidden;
 }
 
+.section { 
+    padding-top: 120px;
+}
+
 .logo { 
     display: block;
     max-width: 200px;
@@ -242,6 +246,39 @@ body {
     &__link { 
         display: flex;
         flex-direction: column;
+
+        &:focus { 
+            .rest-card__go { 
+                background-color: #FFF2ED;
+                box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.70);
+            }
+    
+            .rest-card__go-arrow path{ 
+                fill: $orange;
+            }
+        }
+
+        &:hover { 
+            .rest-card__go { 
+                background-color: transparent;
+                box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.70);
+            }
+            
+            .rest-card__go-arrow { 
+                transform: translateX(20px);
+            }
+
+            .rest-card__go-arrow path{ 
+                fill: $orange;
+            }
+        }
+
+        &:active { 
+            .rest-card__go { 
+                background-color: #FFF2ED;
+                box-shadow: 0px 0px 0px 2px transparent;
+            }
+        }
     }
 
     &__img { 
@@ -290,22 +327,22 @@ body {
     }
 
     &__go { 
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         position: relative;
         width: 80px;
         height: 33px;
         background-color: $orange;
         border-radius: 20px;
-        
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 24px;
-            height: 24px;
-            background: url("../images/icons/rest-card/arrow.svg") 0 0 / cover no-repeat;
+        transition: background-color 0.6s ease, box-shadow 0.6s ease;
+    }
+
+    &__go-arrow { 
+        transition: transform 0.6s ease;
+
+        & path { 
+            transition: fill 0.6s ease;
         }
     }
 }

@@ -11,12 +11,18 @@ $(function(){
         focusOnSelect: true,
         prevArrow: $('.slick-prev'),
         nextArrow: $('.slick-next'),
-        appendArrows: $('.slick-dots'),
+        fade: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
       });
 
     $(".star").rateYo({
         starWidth: "40px"
       });
+
+    $(window).scroll(function(){
+        $('.header').toggleClass('header--scroll', $(this).scrollTop() > 20);
+    });
 });
 
 

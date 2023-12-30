@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="./css/style.min.css">
         <title>Document</title>
     </head>
+
     <body>
         <header class="header">
             <div class="container">
@@ -13,6 +14,7 @@
                     <a class="logo header__logo" href="#">
                         <img class="logo__img" src="./images/Logo.svg" width="200" height="39" alt="Логотип">
                     </a>
+
                     <nav class="menu">
                         <ul class="menu__list">
                             <li class="menu__item">
@@ -20,11 +22,13 @@
                                     Главная
                                 </a>
                             </li>
+
                             <li class="menu__item">
                                 <a class="menu__link" target="_blank" href="#">
                                     Блюда
                                 </a>
                             </li>
+
                             <li class="menu__item">
                                 <a class="menu__link" target="_blank" href="#">
                                     Контакты
@@ -32,26 +36,31 @@
                             </li>
                         </ul>
                     </nav>
+
                     <ul class="user-nav">
                         <li class="user-nav__item">
                             <a class="user-nav__link" href="#">
                                 <span class="sr-only">
                                     Поиск
                                 </span>
+
                                 <svg class="user-nav__img" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                                     <ellipse cx="9.76657" cy="9.65987" rx="8.98856" ry="8.88424" stroke="#363853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M16.0183 16.3004L19.5423 19.7745" stroke="#363853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
                         </li>
+
                         <li class="user-nav__item">
                             <a class="user-nav__link user-nav__link" href="#">
                                 <span class="sr-only">
                                     Корзина
                                 </span>
+
                                 <span class="user-nav__value">
                                     4
                                 </span>
+
                                 <svg class="user-nav__img" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
                                     <path d="M1 1.02979L3.08 1.38561L4.04301 12.7255C4.12001 13.6516 4.90301 14.3622 5.84301 14.3593H16.752C17.649 14.3613 18.41 13.7089 18.537 12.8312L19.486 6.34932C19.592 5.62483 19.083 4.95272 18.351 4.84795C18.287 4.83906 3.414 4.83412 3.414 4.83412" stroke="#363853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M12.375 8.48737H15.1479" stroke="#363853" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -68,7 +77,7 @@
         <main class="main">
             <section class="hero">
                 <div class="container">
-                    <div class="hero__inner" style="background-image: url('./images/backgrounds/hero/Hero.png');">
+                    <div class="hero__inner" style="background-image: url('./images/backgrounds/hero/hero.png');">
                         <div class="hero__content">
                             <h1 class="hero__title">
                                 Доставка 
@@ -95,7 +104,7 @@
                 </div>
             </section>
 
-            <section class="popular">
+            <section class="section popular">
                 <div class="container">
                     <h2 class="title popular__title">
                         Популярные категории 
@@ -406,7 +415,7 @@
                 </div>
             </section>
 
-            <section class="features">
+            <section class="section features">
                 <div class="container">
                     <div class="features__inner" style="background-image: url('./images/backgrounds/features/delivery.png');">
                         <div class="features__content">
@@ -440,7 +449,7 @@
                 </div>
             </section>
 
-            <section class="restaurants">
+            <section class="section restaurants">
                 <div class="container">
                     <h2 class="title restaurants__title">
                         Лучшие рестораны
@@ -461,7 +470,11 @@
                                             11:00 - 22:00
                                         </span>
                                 
-                                        <div class="rest-card__go"></div>
+                                        <div class="rest-card__go">
+                                            <svg class="rest-card__go-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M13.121 6.293C12.9335 6.48053 12.8282 6.73484 12.8282 7C12.8282 7.26516 12.9335 7.51947 13.121 7.707L16.413 11L6 11.007C5.73478 11.007 5.48043 11.1124 5.29289 11.2999C5.10536 11.4874 5 11.7418 5 12.007C5 12.2722 5.10536 12.5266 5.29289 12.7141C5.48043 12.9016 5.73478 13.007 6 13.007L16.414 13L13.121 16.293C13.0255 16.3852 12.9493 16.4956 12.8969 16.6176C12.8445 16.7396 12.8169 16.8708 12.8157 17.0036C12.8146 17.1364 12.8399 17.2681 12.8902 17.391C12.9405 17.5138 13.0147 17.6255 13.1086 17.7194C13.2025 17.8133 13.3141 17.8875 13.437 17.9378C13.5599 17.9881 13.6916 18.0134 13.8244 18.0123C13.9572 18.0111 14.0884 17.9835 14.2104 17.9311C14.3324 17.8787 14.4428 17.8025 14.535 17.707L18.121 14.122C18.3996 13.8434 18.6207 13.5127 18.7715 13.1487C18.9222 12.7847 18.9999 12.3945 18.9999 12.0005C18.9999 11.6065 18.9222 11.2163 18.7715 10.8523C18.6207 10.4883 18.3996 10.1576 18.121 9.879L14.535 6.293C14.3475 6.10553 14.0932 6.00021 13.828 6.00021C13.5628 6.00021 13.3085 6.10553 13.121 6.293Z" fill="white"/>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -481,7 +494,11 @@
                                             12:00 - 21:00
                                         </span>
                                 
-                                        <div class="rest-card__go"></div>
+                                        <div class="rest-card__go">
+                                            <svg class="rest-card__go-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M13.121 6.293C12.9335 6.48053 12.8282 6.73484 12.8282 7C12.8282 7.26516 12.9335 7.51947 13.121 7.707L16.413 11L6 11.007C5.73478 11.007 5.48043 11.1124 5.29289 11.2999C5.10536 11.4874 5 11.7418 5 12.007C5 12.2722 5.10536 12.5266 5.29289 12.7141C5.48043 12.9016 5.73478 13.007 6 13.007L16.414 13L13.121 16.293C13.0255 16.3852 12.9493 16.4956 12.8969 16.6176C12.8445 16.7396 12.8169 16.8708 12.8157 17.0036C12.8146 17.1364 12.8399 17.2681 12.8902 17.391C12.9405 17.5138 13.0147 17.6255 13.1086 17.7194C13.2025 17.8133 13.3141 17.8875 13.437 17.9378C13.5599 17.9881 13.6916 18.0134 13.8244 18.0123C13.9572 18.0111 14.0884 17.9835 14.2104 17.9311C14.3324 17.8787 14.4428 17.8025 14.535 17.707L18.121 14.122C18.3996 13.8434 18.6207 13.5127 18.7715 13.1487C18.9222 12.7847 18.9999 12.3945 18.9999 12.0005C18.9999 11.6065 18.9222 11.2163 18.7715 10.8523C18.6207 10.4883 18.3996 10.1576 18.121 9.879L14.535 6.293C14.3475 6.10553 14.0932 6.00021 13.828 6.00021C13.5628 6.00021 13.3085 6.10553 13.121 6.293Z" fill="white"/>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -501,7 +518,11 @@
                                             11:00 - 22:00
                                         </span>
                                 
-                                        <div class="rest-card__go"></div>
+                                        <div class="rest-card__go">
+                                            <svg class="rest-card__go-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M13.121 6.293C12.9335 6.48053 12.8282 6.73484 12.8282 7C12.8282 7.26516 12.9335 7.51947 13.121 7.707L16.413 11L6 11.007C5.73478 11.007 5.48043 11.1124 5.29289 11.2999C5.10536 11.4874 5 11.7418 5 12.007C5 12.2722 5.10536 12.5266 5.29289 12.7141C5.48043 12.9016 5.73478 13.007 6 13.007L16.414 13L13.121 16.293C13.0255 16.3852 12.9493 16.4956 12.8969 16.6176C12.8445 16.7396 12.8169 16.8708 12.8157 17.0036C12.8146 17.1364 12.8399 17.2681 12.8902 17.391C12.9405 17.5138 13.0147 17.6255 13.1086 17.7194C13.2025 17.8133 13.3141 17.8875 13.437 17.9378C13.5599 17.9881 13.6916 18.0134 13.8244 18.0123C13.9572 18.0111 14.0884 17.9835 14.2104 17.9311C14.3324 17.8787 14.4428 17.8025 14.535 17.707L18.121 14.122C18.3996 13.8434 18.6207 13.5127 18.7715 13.1487C18.9222 12.7847 18.9999 12.3945 18.9999 12.0005C18.9999 11.6065 18.9222 11.2163 18.7715 10.8523C18.6207 10.4883 18.3996 10.1576 18.121 9.879L14.535 6.293C14.3475 6.10553 14.0932 6.00021 13.828 6.00021C13.5628 6.00021 13.3085 6.10553 13.121 6.293Z" fill="white"/>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -521,7 +542,11 @@
                                             06:00 - 23:00
                                         </span>
                                 
-                                        <div class="rest-card__go"></div>
+                                        <div class="rest-card__go">
+                                            <svg class="rest-card__go-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M13.121 6.293C12.9335 6.48053 12.8282 6.73484 12.8282 7C12.8282 7.26516 12.9335 7.51947 13.121 7.707L16.413 11L6 11.007C5.73478 11.007 5.48043 11.1124 5.29289 11.2999C5.10536 11.4874 5 11.7418 5 12.007C5 12.2722 5.10536 12.5266 5.29289 12.7141C5.48043 12.9016 5.73478 13.007 6 13.007L16.414 13L13.121 16.293C13.0255 16.3852 12.9493 16.4956 12.8969 16.6176C12.8445 16.7396 12.8169 16.8708 12.8157 17.0036C12.8146 17.1364 12.8399 17.2681 12.8902 17.391C12.9405 17.5138 13.0147 17.6255 13.1086 17.7194C13.2025 17.8133 13.3141 17.8875 13.437 17.9378C13.5599 17.9881 13.6916 18.0134 13.8244 18.0123C13.9572 18.0111 14.0884 17.9835 14.2104 17.9311C14.3324 17.8787 14.4428 17.8025 14.535 17.707L18.121 14.122C18.3996 13.8434 18.6207 13.5127 18.7715 13.1487C18.9222 12.7847 18.9999 12.3945 18.9999 12.0005C18.9999 11.6065 18.9222 11.2163 18.7715 10.8523C18.6207 10.4883 18.3996 10.1576 18.121 9.879L14.535 6.293C14.3475 6.10553 14.0932 6.00021 13.828 6.00021C13.5628 6.00021 13.3085 6.10553 13.121 6.293Z" fill="white"/>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -541,7 +566,11 @@
                                             06:00 - 23:30
                                         </span>
                                 
-                                        <div class="rest-card__go"></div>
+                                        <div class="rest-card__go">
+                                            <svg class="rest-card__go-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M13.121 6.293C12.9335 6.48053 12.8282 6.73484 12.8282 7C12.8282 7.26516 12.9335 7.51947 13.121 7.707L16.413 11L6 11.007C5.73478 11.007 5.48043 11.1124 5.29289 11.2999C5.10536 11.4874 5 11.7418 5 12.007C5 12.2722 5.10536 12.5266 5.29289 12.7141C5.48043 12.9016 5.73478 13.007 6 13.007L16.414 13L13.121 16.293C13.0255 16.3852 12.9493 16.4956 12.8969 16.6176C12.8445 16.7396 12.8169 16.8708 12.8157 17.0036C12.8146 17.1364 12.8399 17.2681 12.8902 17.391C12.9405 17.5138 13.0147 17.6255 13.1086 17.7194C13.2025 17.8133 13.3141 17.8875 13.437 17.9378C13.5599 17.9881 13.6916 18.0134 13.8244 18.0123C13.9572 18.0111 14.0884 17.9835 14.2104 17.9311C14.3324 17.8787 14.4428 17.8025 14.535 17.707L18.121 14.122C18.3996 13.8434 18.6207 13.5127 18.7715 13.1487C18.9222 12.7847 18.9999 12.3945 18.9999 12.0005C18.9999 11.6065 18.9222 11.2163 18.7715 10.8523C18.6207 10.4883 18.3996 10.1576 18.121 9.879L14.535 6.293C14.3475 6.10553 14.0932 6.00021 13.828 6.00021C13.5628 6.00021 13.3085 6.10553 13.121 6.293Z" fill="white"/>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -561,7 +590,11 @@
                                             09:00 - 21:00
                                         </span>
                                 
-                                        <div class="rest-card__go"></div>
+                                        <div class="rest-card__go">
+                                            <svg class="rest-card__go-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M13.121 6.293C12.9335 6.48053 12.8282 6.73484 12.8282 7C12.8282 7.26516 12.9335 7.51947 13.121 7.707L16.413 11L6 11.007C5.73478 11.007 5.48043 11.1124 5.29289 11.2999C5.10536 11.4874 5 11.7418 5 12.007C5 12.2722 5.10536 12.5266 5.29289 12.7141C5.48043 12.9016 5.73478 13.007 6 13.007L16.414 13L13.121 16.293C13.0255 16.3852 12.9493 16.4956 12.8969 16.6176C12.8445 16.7396 12.8169 16.8708 12.8157 17.0036C12.8146 17.1364 12.8399 17.2681 12.8902 17.391C12.9405 17.5138 13.0147 17.6255 13.1086 17.7194C13.2025 17.8133 13.3141 17.8875 13.437 17.9378C13.5599 17.9881 13.6916 18.0134 13.8244 18.0123C13.9572 18.0111 14.0884 17.9835 14.2104 17.9311C14.3324 17.8787 14.4428 17.8025 14.535 17.707L18.121 14.122C18.3996 13.8434 18.6207 13.5127 18.7715 13.1487C18.9222 12.7847 18.9999 12.3945 18.9999 12.0005C18.9999 11.6065 18.9222 11.2163 18.7715 10.8523C18.6207 10.4883 18.3996 10.1576 18.121 9.879L14.535 6.293C14.3475 6.10553 14.0932 6.00021 13.828 6.00021C13.5628 6.00021 13.3085 6.10553 13.121 6.293Z" fill="white"/>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -570,7 +603,7 @@
                 </div>
             </section>
 
-            <section class="testimonials">
+            <section class="section testimonials">
                 <div class="container">
                     <h2 class="title testimonials__title">
                         Отзывы клиентов
@@ -580,10 +613,12 @@
                         <figure class="testimonials__quote">
                             <div class="testimonials__quote-inner">
                                 <img class="testimonials__userpic" src="./images/content/testimonials/darya.jpg" alt="Фото Дарьи">
+
                                 <div class="testimonials__quote-content">
                                     <blockquote class="testimonials__blockquote">
                                         SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на доставку - однозначно рекомендую!
                                     </blockquote>
+
                                     <figcaption class="testimonials__author">
                                         Дарья
                                 
@@ -598,10 +633,12 @@
                         <figure class="testimonials__quote">
                             <div class="testimonials__quote-inner">
                                 <img class="testimonials__userpic" src="./images/content/testimonials/darya.jpg" alt="Фото Дарьи">
+
                                 <div class="testimonials__quote-content">
                                     <blockquote class="testimonials__blockquote">
                                         SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на доставку - однозначно рекомендую!
                                     </blockquote>
+
                                     <figcaption class="testimonials__author">
                                         Дарья
                                 
@@ -616,10 +653,12 @@
                         <figure class="testimonials__quote">
                             <div class="testimonials__quote-inner">
                                 <img class="testimonials__userpic" src="./images/content/testimonials/darya.jpg" alt="Фото Дарьи">
+
                                 <div class="testimonials__quote-content">
                                     <blockquote class="testimonials__blockquote">
                                         SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на доставку - однозначно рекомендую!
                                     </blockquote>
+
                                     <figcaption class="testimonials__author">
                                         Дарья
                                 
@@ -634,10 +673,12 @@
                         <figure class="testimonials__quote">
                             <div class="testimonials__quote-inner">
                                 <img class="testimonials__userpic" src="./images/content/testimonials/darya.jpg" alt="Фото Дарьи">
+
                                 <div class="testimonials__quote-content">
                                     <blockquote class="testimonials__blockquote">
                                         SimpleFood - одна из лучших служб доставки продуктов из ресторанов в городе. Очень удобный сайт и приложение. Их доставщики очень вежливы и пунктуальны. Компания часто проводит акции и дарит скидки на доставку - однозначно рекомендую!
                                     </blockquote>
+
                                     <figcaption class="testimonials__author">
                                         Дарья
                                 
@@ -650,14 +691,18 @@
                         </figure>
                     </div>
 
-                    <button class="slick-prev">
+                    <button class="slick-prev" type="button">
+                        <span class="sr-only">Предыдущий отзыв</span>
+
                         <svg class="slick-img" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="18.5" fill="white" fill-opacity="0.01" stroke="#C2C2C2" stroke-width="3"/>
                             <path d="M21.1968 29.0492L13.4508 21.3033C12.8497 20.699 12.8497 19.7231 13.4508 19.1189L21.1968 11.3729C21.7761 10.8757 22.6328 10.8757 23.2122 11.3729C23.8614 11.9291 23.9372 12.9082 23.3811 13.5573L16.7351 20.2033L23.3811 26.8648C23.9822 27.469 23.9822 28.445 23.3811 29.0492C22.7769 29.6503 21.8009 29.6503 21.1968 29.0492Z" fill="#C2C2C2"/>
                         </svg>
                     </button>
 
-                    <button class="slick-next">
+                    <button class="slick-next" type="button">
+                        <span class="sr-only">Следующий отзыв отзыв</span>
+
                         <svg class="slick-img" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="18.5" fill="white" fill-opacity="0.01" stroke="#C2C2C2" stroke-width="3"/>
                             <path d="M18.6352 11.4508L26.3811 19.1967C26.9822 19.801 26.9822 20.7769 26.3811 21.3811L18.6352 29.1271C18.0558 29.6243 17.1991 29.6243 16.6197 29.1271C15.9706 28.5709 15.8947 27.5918 16.4509 26.9427L23.0968 20.2967L16.4508 13.6352C15.8497 13.031 15.8497 12.055 16.4508 11.4508C17.055 10.8497 18.031 10.8497 18.6352 11.4508Z" fill="#C2C2C2"/>
@@ -665,9 +710,39 @@
                     </button>
                 </div>
             </section>
+
+            <section class="app">
+                <div class="container">
+                    <div class="app__inner" style="background-image: url('./images/backgrounds/app/app-bg.jpg');">
+                        <div class="app__content">
+                            <h2 class="title app__title">
+                                Скачайте мобильное приложение
+                            </h2>
+
+                            <h4 class="subtitle app__subtitle">
+                                Рестораны, которые вы любите - в ваших руках. Устанавливайте приложение и заказывайте еду в любом удобном месте. 
+                            </h4>
+
+                            <div class="app__links">
+                                <a class="app__link app__link-app-store" href="#" target="_blank">
+                                    <span class="sr-only">
+                                        Скачать приложение через App Store
+                                    </span>
+                                </a>
+
+                                <a class="app__link app__link-google-play" href="#" target="_blank">
+                                    <span class="sr-only">
+                                        Скачать приложение через Google Play
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
   
-        <footer class="footer">
+        <footer class="section footer">
             <div class="footer-top">
                 <div class="container">
                     <div class="footer-top__inner">
@@ -675,9 +750,12 @@
                             <a class="logo footer-top__logo" href="#">
                                 <img class="logo__img" src="./images/Logo.svg" width="200" height="39" alt="Логотип">
                             </a>
+
                             <form class="footer-top__form" action="#">
                                 <input class="footer-top__form-input" type="email" placeholder="Ваш email" id="email" required>
+
                                 <label class="sr-only" for="email">Ваш email</label>
+
                                 <button class="btn footer-top__form-btn" type="submit">
                                     <svg class="footer-top__form-btn-icon"  xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
                                         <path d="M9.31801 14.3299C9.05868 14.3299 8.81931 14.1914 8.70237 13.9704L6.66079 10.112C6.54867 9.90012 6.56793 9.64662 6.71031 9.45097L10.0059 5.22987L5.53819 8.34337C5.33115 8.47857 5.06288 8.49547 4.83864 8.39017L0.756163 6.46162C0.511284 6.34527 0.362017 6.10282 0.37715 5.84412C0.391595 5.58542 0.568376 5.35922 0.825638 5.27017L13.8951 0.720173C14.1461 0.633723 14.4288 0.690273 14.6194 0.870323C14.8092 1.04907 14.8711 1.31687 14.7783 1.55477L9.96322 13.9048C9.8683 14.1479 9.62961 14.3149 9.35584 14.3286C9.34346 14.3292 9.33039 14.3299 9.31801 14.3299Z" fill="#ffffff"/>
@@ -690,25 +768,25 @@
                         <nav class="footer-menu">
                             <ul class="footer-menu__list">
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         Как это работает
                                     </a>
                                 </li>
 
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         Продукты
                                     </a>
                                 </li>
 
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         Блюда
                                     </a>
                                 </li>
 
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         Меню
                                     </a>
                                 </li>
@@ -716,25 +794,25 @@
 
                             <ul class="footer-menu__list">
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         О нас
                                     </a>
                                 </li>
                                 
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         Новости
                                     </a>
                                 </li>
                                 
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         Партнеры
                                     </a>
                                 </li>
                                 
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         ЧаВо
                                     </a>
                                 </li>
@@ -742,25 +820,25 @@
 
                             <ul class="footer-menu__list">
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         Скачать приложение
                                     </a>
                                 </li>
 
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         Блог
                                     </a>
                                 </li>
 
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         Что нового?
                                     </a>
                                 </li>
 
                                 <li class="footer-menu__item">
-                                    <a class="menu__link footer-menu__link" href="#">
+                                    <a class="menu__link footer-menu__link" href="#" target="_blank">
                                         Карта сайта
                                     </a>
                                 </li>
@@ -794,6 +872,7 @@
                                         <span class="sr-only">
                                             Facebook
                                         </span>
+
                                         <div class="footer-contacts__socials-wrapper">
                                             <svg class="footer-contacts__socials-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="21" viewBox="0 0 10 21" fill="none">
                                                 <path d="M2.54678 20.5561V10.9246H0V7.45674H2.54678V4.49477C2.54678 2.16723 4.05118 0.0297852 7.51762 0.0297852C8.92113 0.0297852 9.95896 0.164335 9.95896 0.164335L9.87718 3.40269C9.87718 3.40269 8.81876 3.39239 7.66377 3.39239C6.41371 3.39239 6.21344 3.96846 6.21344 4.92459V7.45674H9.97655L9.81281 10.9246H6.21344V20.5561H2.54678Z" fill="#31352B"/>
@@ -807,6 +886,7 @@
                                         <span class="sr-only">
                                             Twitter
                                         </span>
+
                                         <div class="footer-contacts__socials-wrapper">
                                             <svg class="footer-contacts__socials-icon" xmlns="http://www.w3.org/2000/svg" width="21" height="17" viewBox="0 0 21 17" fill="none">
                                                 <path d="M20.5263 2.01064C19.7715 2.33626 18.95 2.57061 18.1039 2.66188C18.9824 2.13999 19.6402 1.31549 19.954 0.34308C19.1297 0.833455 18.2266 1.17731 17.2849 1.35941C16.8913 0.938633 16.4153 0.603427 15.8865 0.374674C15.3577 0.145921 14.7874 0.0285227 14.2113 0.0297954C11.8802 0.0297954 10.0054 1.91937 10.0054 4.23817C10.0054 4.56379 10.0448 4.88941 10.109 5.20269C6.61845 5.02015 3.50534 3.35259 1.43568 0.79944C1.05857 1.44356 0.86095 2.17697 0.863383 2.92336C0.863383 4.38371 1.60589 5.67139 2.73816 6.4287C2.0709 6.40242 1.41926 6.21901 0.836248 5.8934V5.9452C0.836248 7.99019 2.2818 9.68489 4.20838 10.0746C3.84664 10.1686 3.47452 10.2167 3.10078 10.2177C2.82696 10.2177 2.56795 10.1906 2.30647 10.1536C2.8393 11.8211 4.39092 13.0323 6.23856 13.0718C4.79301 14.2041 2.98237 14.8701 1.01633 14.8701C0.663572 14.8701 0.337953 14.8578 0 14.8183C1.86491 16.0147 4.07763 16.7054 6.46057 16.7054C14.1965 16.7054 18.4295 10.2967 18.4295 4.734C18.4295 4.55146 18.4295 4.36891 18.4172 4.18637C19.2362 3.58693 19.954 2.84442 20.5263 2.01064Z" fill="#31352B"/>
@@ -820,6 +900,7 @@
                                         <span class="sr-only">
                                             Instagram
                                         </span>
+
                                         <div class="footer-contacts__socials-wrapper">
                                             <svg class="footer-contacts__socials-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                 <path d="M9.74756 6.5284C7.95723 6.5284 6.49618 7.98945 6.49618 9.77979C6.49618 11.5701 7.95723 13.0312 9.74756 13.0312C11.5379 13.0312 12.9989 11.5701 12.9989 9.77979C12.9989 7.98945 11.5379 6.5284 9.74756 6.5284ZM19.4993 9.77979C19.4993 8.43338 19.5115 7.09916 19.4359 5.75519C19.3602 4.19414 19.0041 2.8087 17.8626 1.66718C16.7186 0.523218 15.3356 0.169542 13.7746 0.0939285C12.4282 0.0183149 11.094 0.0305107 9.75 0.0305107C8.40359 0.0305107 7.06938 0.0183149 5.72541 0.0939285C4.16435 0.169542 2.77892 0.525658 1.63739 1.66718C0.493433 2.81114 0.139757 4.19414 0.0641433 5.75519C-0.0114703 7.1016 0.00072551 8.43581 0.00072551 9.77979C0.00072551 11.1238 -0.0114703 12.4604 0.0641433 13.8044C0.139757 15.3654 0.495873 16.7509 1.63739 17.8924C2.78135 19.0364 4.16435 19.39 5.72541 19.4656C7.07182 19.5413 8.40603 19.5291 9.75 19.5291C11.0964 19.5291 12.4306 19.5413 13.7746 19.4656C15.3356 19.39 16.7211 19.0339 17.8626 17.8924C19.0066 16.7484 19.3602 15.3654 19.4359 13.8044C19.5139 12.4604 19.4993 11.1262 19.4993 9.77979ZM9.74756 14.7825C6.97913 14.7825 4.74487 12.5482 4.74487 9.77979C4.74487 7.01135 6.97913 4.77709 9.74756 4.77709C12.516 4.77709 14.7503 7.01135 14.7503 9.77979C14.7503 12.5482 12.516 14.7825 9.74756 14.7825ZM14.9551 5.74056C14.3088 5.74056 13.7868 5.21858 13.7868 4.5722C13.7868 3.92583 14.3088 3.40385 14.9551 3.40385C15.6015 3.40385 16.1235 3.92583 16.1235 4.5722C16.1237 4.72569 16.0936 4.8777 16.035 5.01954C15.9763 5.16138 15.8903 5.29025 15.7817 5.39878C15.6732 5.50731 15.5443 5.59337 15.4025 5.65201C15.2606 5.71066 15.1086 5.74075 14.9551 5.74056Z" fill="#31352B"/>
@@ -832,6 +913,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="footer-copy">
                 <div class="container">
                     <span class="footer-copy__text">
