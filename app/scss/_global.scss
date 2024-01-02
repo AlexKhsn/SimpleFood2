@@ -181,7 +181,7 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 210px;
-    padding: 20px 15px;
+    padding-bottom: 20px;
     background-color: $white;
     box-shadow: 0px 0px 0px 1px $silver;
     border-radius: 5px;
@@ -198,6 +198,7 @@ body {
         align-items: center;
         justify-content: space-between;
         margin-bottom: 10px;
+        padding: 20px 15px 0;
         text-align: center;
     }
 

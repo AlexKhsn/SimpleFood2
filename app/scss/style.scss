@@ -102,14 +102,15 @@
 
     &__value { 
         position: absolute;
+        top: 7px;
+        right: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
-        top: 7px;
-        right: 4px;
         width: 14px;
         height: 14px;
         font-size: 10px;
+        line-height: 1;
         color: $white;
         background-color: $orange;
         border-radius: 50%;
