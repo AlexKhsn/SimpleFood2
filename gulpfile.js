@@ -6,6 +6,9 @@ const uglify =                  require('gulp-uglify');
 const imagemin =                require('gulp-imagemin');
 const del =                     require('del');
 const browserSync =             require('browser-sync').create();
+const svgSprite =               require('gulp-svg-sprite');
+const cheerio =                 require('gulp-cheerio');
+const replace =                 require('gulp-replace');
 
 
 
@@ -40,6 +43,8 @@ function scripts() {
         'node_modules/mixitup/dist/mixitup.js',
         'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
         'node_modules/rateyo/src/jquery.rateyo.js',
+        'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
+        'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
         'app/js/main.js'
     ])
     .pipe(concat('main.min.js'))
@@ -81,7 +86,32 @@ function watching() {
     watch(['app/scss/**/*.scss'], styles);
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/**/*.html']).on('change', browserSync.reload);
+    watch(['app/images/icons/*.svg'], svgSprites);
 }
+
+function svgSprites() {
+    return src('app/images/icons/*.svg') 
+    .pipe(cheerio({
+          run: ($) => {
+              $("[fill]").removeAttr("fill"); 
+              $("[stroke]").removeAttr("stroke"); 
+              $("[style]").removeAttr("style"); 
+          },
+          parserOptions: { xmlMode: true },
+        })
+    )
+      .pipe(replace('&gt;','>')) // боремся с заменой символа 
+      .pipe(
+            svgSprite({
+              mode: {
+                stack: {
+                  sprite: '../sprite.svg', 
+                },
+              },
+            })
+          )
+      .pipe(dest('app/images')); 
+  }
 
 exports.styles = styles;
 exports.scripts = scripts;
@@ -89,5 +119,6 @@ exports.browsersync = browsersync;
 exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
+exports.svgSprites = svgSprites;
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(svgSprites, styles, scripts, browsersync, watching);

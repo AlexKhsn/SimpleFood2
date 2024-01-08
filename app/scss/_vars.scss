@@ -1,34 +1,40 @@
-$orange: #ff6838;
-$orange-light: #FF7A50;
-$title: #363853;
-$default: #31352b;
-$gray: #c2c2c2;
-$silver: #ececec;
-$bg: #f9faff;
-$white: #ffffff;
+$primaryColor: #ff6838;
+$secondaryColor: #ff7a50;
+$hoverBgColor: #FFAE94;
+$focusShdadowColor: #ff9674;
+$focusBgColor: #FFF2ED;
+$titleColor: #363853;
+$defaultColor: #31352b;
+$accentColor: #c2c2c2;
+$accentLightColor: #ececec;
+$bgColor: #f9faff;
+$cardBgColor: #ffffff;
+$borderColor: #000000;
+$headerBgColor: #ecedf2;
+$borderFocusColor: #c2c2c200;
 
 
 
 
 %rubik-300 { 
-    font-family: "Rubik-Light", sans-serif;
-    font-weight: 300;
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
 }
 
 %rubik-400 { 
-    font-family: "Rubik-Regular", sans-serif;
-    font-weight: 400;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
 }
 
 %rubik-italic { 
-    font-family: "Rubik-Italic", sans-serif;
-    font-style: italic;
-    font-weight: 400;
+  font-family: "Rubik", sans-serif;
+  font-style: italic;
+  font-weight: 400;
 }
 
 %rubik-500 { 
-    font-family: "Rubik-Medium", sans-serif;
-    font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
 }
 
 @function max($numbers...) {
@@ -37,3 +43,13 @@ $white: #ffffff;
 @function min($numbers...) {
   @return m#{i}n(#{$numbers});
 }
+
+
+
+
+$breakpoints: (
+  "phone": 560px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop": 1230px
+)

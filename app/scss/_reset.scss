@@ -32,7 +32,7 @@ dd {
   margin: 0;
 }
 
-ul[class] { 
+ul { 
   list-style: none;
 }
 
@@ -59,7 +59,8 @@ body {
 
 a,
 button,
-input { 
+input,
+textarea { 
   outline: transparent;
 }
 
@@ -68,4 +69,5 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  appearance: none;
 }

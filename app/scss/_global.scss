@@ -1,349 +1,220 @@
 html,
 body { 
-    height: 100%;
+  height: 100%;
 }
 
 body { 
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    @extend %rubik-400;
-    line-height: 1.3;
-    color: $default;
-    background-color: $bg;
+  flex-direction: column;
+  font-size: 20px;
+  @extend %rubik-400;
+  line-height: 1.3;
+  color: $defaultColor;
+  background-color: $bgColor;
 }
 
 .container { 
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .section { 
-    padding-top: 120px;
+  padding-top: 120px;
 }
 
 .logo { 
-    display: block;
-    max-width: 200px;
+  display: block;
+  width: 200px;
+  height: 39px;
+  border-radius: 5px;
+  transition: background-color 0.6s ease, box-shadow 0.6s ease, opacity 0.6s ease;
+
+  &__img { 
     width: 100%;
-    border-radius: 5px;
-    transition: background-color 0.6s ease, box-shadow 0.6s ease, opacity 0.6s ease;
+    height: 100%;
+  }
 
-    &:focus { 
-        background-color: rgba(255, 255, 255, 0.01);
-        box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.70);
-    }
+  &:focus { 
+    background-color: rgba($cardBgColor, 0.01);
+    box-shadow: 0 0 0 2px rgba($primaryColor, 0.702);
+  }
 
-    &:hover { 
-        opacity: 0.8;
-    }
+  &:hover { 
+    opacity: 0.8;
+  }
 
-    &:active { 
-        box-shadow: none;
-        opacity: 0.5;
-    }
-}
-
-.menu__link { 
-    font-size: 18px;
-    line-height: 2.2;
-    @extend %rubik-400;
-    color: #31352B;
-    border-radius: 5px;
-    transition: color 0.6s ease, background-color 0.6s ease, box-shadow 0.6s ease, text-shadow 0.6s ease, border-radius 0.6s ease;
-
-    &:focus { 
-        background-color: rgba(255, 255, 255, 0.01);
-        box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.70);
-    }
-
-    &:hover { 
-        color: $orange;
-    }
-
-    &:active { 
-        color: $default;
-        text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.50);
-        box-shadow: none;
-    }
-
-    &--active { 
-        color: $orange;
-    }
-}
-
-.btn { 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 47px;
-    max-width: 146px;
-    padding: 10px 32px;
-    font-size: 18px;
-    text-align: center;
-    color: $white;
-    background-color: $orange;
-    border-radius: 6px;
-    transition: color 0.6s ease, background-color 0.6s ease, box-shadow 0.6s ease;
-
-    &:focus { 
-        color: $orange;
-        background-color: rgba(255, 122, 80, 0.10);
-        box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.70);
-    }
-
-    &:hover { 
-        color: $orange;
-        background-color: rgba(255, 255, 255, 0.10);
-        box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.70), 0px 5px 12px 0px rgba(255, 104, 56, 0.20);
-    }
-
-    &:active { 
-        background-color: rgba(255, 122, 80, 0.10);
-        box-shadow: none;
-    }
-}
-
-.main { 
-    flex: 1 1 auto;
-}
-
-.title { 
-    font-size: 36px;
-    @extend %rubik-500;
-    text-align: center;
-    color: $title;
-}
-
-.subtitle { 
-    line-height: 1.5;
-    font-weight: 400;
-    opacity: 0.9;
+  &:active { 
+    box-shadow: 0 0 0 2px transparent;
+    opacity: 0.5;
+  }
 }
 
 .more { 
+  position: relative;
+  padding: 0 2px;
+  line-height: 1.5;
+  color: $titleColor;
+  border-radius: 5px;
+  box-shadow: 0 0 0 2px transparent;
+  transition: color 0.6s ease, box-shadow 0.6s ease, text-shadow 0.6s ease, background-color 0.6s ease;
+
+  &::after { 
+    @include pseudo;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $titleColor;
+    transition: background-color 0.6s ease;
+  }
+
+  &:focus { 
+    box-shadow: 0 0 0 2px rgba($primaryColor, 0.7);
+  }
+
+  &:focus::after { 
+    background-color: transparent;
+  }
+
+  &:hover { 
+    color: $primaryColor;
+  }
+
+  &:hover::after { 
+    background-color: transparent;
+  }
+
+  &:active { 
+    color: $titleColor;
+    box-shadow: 0 0 0 2px transparent;
+    text-shadow: 2px 2px 5px rgba($titleColor, 0.5);
+  }
+}
+
+.animation-link { 
+  padding: 0;
+  font-size: 18px;
+  line-height: 2.4;
+  color: $defaultColor;
+
+  &::after { 
+    display: none;
+  }
+
+  &:focus { 
+    background-color: rgba($cardBgColor, 0.01);
+  }
+
+  &:active { 
+    color: $defaultColor;
+  }
+}
+
+.btn { 
+  display: inline-block;
+  padding: 12px 32px;
+  font-size: 18px;
+  letter-spacing: 0.54px;
+  color: $cardBgColor;
+  background-color: $primaryColor;
+  border-radius: 6px;
+  transition: color 0.6s ease, background-color 0.6s ease, box-shadow 0.6s ease;
+
+  &:focus { 
+    color: $primaryColor;
+    background-color: rgba($secondaryColor, 0.1);
+    box-shadow: 0 0 0 2px rgba($primaryColor, 0.7);
+  }
+
+  &:hover { 
+    color: $primaryColor;
+    background-color: rgba($cardBgColor, 0.1);
+    box-shadow: 0 0 0 2px rgba($primaryColor, 0.7), 0 5px 12px 0 rgba($primaryColor, 0.2);
+  }
+
+  &:active { 
+    background-color: rgba($secondaryColor, 0.1);
+    box-shadow: none;
+  }
+}
+
+.main { 
+  flex: 1 1 auto;
+}
+
+.title { 
+  font-size: 36px;
+  @extend %rubik-500;
+  text-align: center;
+  color: $titleColor;
+}
+
+.subtitle { 
+  line-height: 1.5;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.d-flex { 
+  display: flex;
+}
+
+.sectioin-bg { 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.burger-btn { 
+  display: none;
+  padding: 21px 7px;
+
+  @include mq('tablet') { 
+    display: block;
+  }
+
+  &__item { 
     position: relative;
-    padding: 0 2px;
-    line-height: 1.5;
-    color: $title;
-    border-radius: 5px;
-    transition: color 0.6s ease, box-shadow 0.6s ease, text-shadow 0.6s ease, border-bottom 0.6s ease, line-height 0.6s ease;
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: $titleColor;
+
+    &::before,
+    &::after { 
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $titleColor;
+    }
+
+    &::before { 
+      top: 10px;
+    }
 
     &::after { 
-        content: "";
-        position: absolute;
-        bottom: 6px;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: $title;
-        transition: background-color 0.6s ease;
+      bottom: 10px;
     }
-
-    &:focus { 
-        box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.70);
-    }
-
-    &:focus::after { 
-        background-color: transparent;
-    }
-
-    &:hover { 
-        color: $orange;
-    }
-
-    &:hover::after { 
-        background-color: transparent;
-    }
-
-    &:active { 
-        color: $title;
-        box-shadow: none;
-        text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.50);
-    }
-}
-
-.product-card { 
-    display: flex;
-    flex-direction: column;
-    max-width: 210px;
-    padding-bottom: 20px;
-    background-color: $white;
-    box-shadow: 0px 0px 0px 1px $silver;
-    border-radius: 5px;
-    transition: box-shadow 0.6s ease;
-
-    &:hover { 
-        box-shadow: 0px 0px 0px 1px $orange;
-    }
-
-    &__link { 
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        padding: 20px 15px 0;
-        text-align: center;
-    }
-
-    &__img { 
-        max-width: 140px;
-        height: 140px;
-        margin-bottom: 10px;
-        object-fit: cover;
-    }
-
-    &__label { 
-        flex: 1 1 auto;
-        max-width: 100%;
-        font-size: 15px;
-        line-height: 1.250;
-    }
-
-    &__price { 
-        margin-top: 10px;
-        font-size: 15px;
-        @extend %rubik-500;
-        color: $title;
-    }
-
-    &__btn { 
-        max-width: 100%;
-        min-height: 32px;
-        margin: 0 auto;
-        padding: 5px 16px;
-        font-size: 14px;
-    }
-}
-
-.rest-card { 
-    display: flex;
-    max-width: 370px;
-    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.10);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: box-shadow 0.6s ease;
-
-    &:hover { 
-        box-shadow: 0px 3px 15px 0px rgba(255, 104, 56, 0.50);
-    }
-
-    &__link { 
-        display: flex;
-        flex-direction: column;
-
-        &:focus { 
-            .rest-card__go { 
-                background-color: #FFF2ED;
-                box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.70);
-            }
-    
-            .rest-card__go-arrow path{ 
-                fill: $orange;
-            }
-        }
-
-        &:hover { 
-            .rest-card__go { 
-                background-color: transparent;
-                box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.70);
-            }
-            
-            .rest-card__go-arrow { 
-                transform: translateX(20px);
-            }
-
-            .rest-card__go-arrow path{ 
-                fill: $orange;
-            }
-        }
-
-        &:active { 
-            .rest-card__go { 
-                background-color: #FFF2ED;
-                box-shadow: 0px 0px 0px 2px transparent;
-            }
-        }
-    }
-
-    &__img { 
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-    }
-
-    &__info { 
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 auto;
-        padding: 15px 20px 20px;
-        background-color: $white;
-    }
-
-    &__label { 
-        flex: 1 1 auto;
-        margin-bottom: 20px;
-        font-size: 24px;
-    }
-
-    &__info-row { 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    &__time { 
-        position: relative;
-        padding-left: 32px;
-        font-size: 18px;
-        line-height: 1.4;
-        @extend %rubik-300;
-        opacity: 0.9;
-
-        &::before { 
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 22px;
-            height: 22px;
-            background: url("../images/icons/rest-card/time.svg") 0 0/ contain no-repeat;
-        }
-    }
-
-    &__go { 
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        width: 80px;
-        height: 33px;
-        background-color: $orange;
-        border-radius: 20px;
-        transition: background-color 0.6s ease, box-shadow 0.6s ease;
-    }
-
-    &__go-arrow { 
-        transition: transform 0.6s ease;
-
-        & path { 
-            transition: fill 0.6s ease;
-        }
-    }
+  }
 }
