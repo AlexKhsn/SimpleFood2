@@ -10,16 +10,35 @@
 
 
 .header { 
+  @include mq('tablet-2') { 
+    padding: 43px 0;
+  }
+  @include mq('tablet') { 
+    padding: 28px 0 29px;
+  }
+  @include mq('phone') { 
+    padding: 13px 0 14px;
+  }
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 5;
   padding: 57px 0;
   transition: padding 0.3s ease, background-color 0.3s ease;
 
   &__logo { 
     margin-right: auto;
+
+    @include mq ('tablet-2') { 
+      width: 172px;
+      height: 34px;
+    }
+
+    @include mq ('phone') { 
+      width: 116px;
+      height: 23px;
+    }
   }
 
   &__inner { 
@@ -27,7 +46,26 @@
   }
 
   &__menu { 
-    margin-right: 50px;
+    @include mq('tablet-2') { 
+      margin-right: 30px;
+    }
+
+    @include mq('tablet') { 
+      display: none;
+    }
+
+    margin-right: 52px;
+    line-height: 2.1;
+  }
+
+  &__user-nav { 
+    @include mq('tablet') { 
+      margin-right: 20px;
+    }
+
+    @include mq('phone') { 
+      margin-right: 10px;
+    }
   }
 
   &--scroll { 
@@ -39,6 +77,10 @@
 .menu { 
   & > *:not(:last-child) { 
     margin-right: 45px;
+
+    @include mq('tablet-2') { 
+      margin-right: 30px;
+    }
   }
 
   &__link--active { 
@@ -48,7 +90,7 @@
 
 .user-nav { 
   & > *:not(:last-child) { 
-    margin-right: 12px;
+    margin-right: 10px;
   }
 
   &__btn { 
@@ -57,6 +99,7 @@
     align-items: center;
     width: 44px;
     height: 44px;
+    padding-top: 1px;
     border-radius: 5px;
     transition: background-color 0.6s ease, box-shadow 0.6s ease;
 
@@ -114,6 +157,120 @@
     background-color: $primaryColor;
     border-radius: 50%;
     transition: color 0.6s ease, background-color 0.6s ease;
+  }
+}
+
+.burger-btn { 
+  display: none;
+  @include burger-btn;
+  @include mq('tablet') { 
+    display: block;
+  }
+}
+
+.burger-menu { 
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 10;
+  height: 100vh;
+  background-color: $cardBgColor;
+  opacity: 0;
+  transition: left 200ms linear, opacity 0.3s ease;
+
+  &__top { 
+    padding: 22px 0 25px;
+  }
+
+  &__top-inner { 
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo { 
+    display: block;
+    margin-right: 28px;
+  }
+
+  .burger-btn { 
+    display: block;
+    position: relative;
+    width: $popupBurgerBtnWidth;
+    height: $popupBurgerBtnheight;
+    
+    &__line { 
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-35%);
+      width: $popupBurgerBtnLineWidth;
+      height: $popupBurgerBtnLineHeight;
+      background-color: transparent;
+      &::before,
+      &::after { 
+        height: $popupBurgerBtnLineHeight;
+        transform-origin: left;
+        border-radius: 10px;
+      }
+
+      &::before { 
+        transform: rotate(45deg);
+        bottom: calc($burgerBtnLineHeight + $popupBurgerBtnSpaceBetween);
+      }
+
+      &::after { 
+        top: calc($burgerBtnLineHeight + $popupBurgerBtnSpaceBetween);
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__menu-wrapper { 
+    position: relative;
+
+    &::before,
+    &::after { 
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $bgLineColor;
+    }
+
+    &::before { 
+      top: -3px;
+    }
+
+    &::after { 
+      bottom: 0;
+    }
+  }
+
+  &__menu { 
+    padding: 12px 0;
+  }
+
+  .menu > *:not(:last-child){ 
+    margin-right: 0;
+  }
+
+  &__address-wrapper { 
+    padding-top: 15px;
+  }
+
+  .socials { 
+    padding-top: 1px;
+    margin-left: -3px;
+
+    & > *:not(:last-child) { 
+      margin-right: 8px;
+    }
+  }
+
+  &--active { 
+    left: 0;
+    opacity: 1;
   }
 }
 
@@ -902,8 +1059,8 @@
   }
 
   &__icon { 
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     margin-right: 8px;
     stroke-width: 1.5;
     fill: none;
@@ -955,8 +1112,8 @@
     &__wrapper { 
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 39px;
+      height: 39px;
       background-color: $accentLightColor;
       border-radius: 50%;
       transition: background-color 0.6s ease, box-shadow 0.6s ease;

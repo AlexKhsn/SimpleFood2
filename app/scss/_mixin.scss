@@ -31,3 +31,42 @@
     -webkit-box-orient: vertical;
   }
 };
+
+@mixin burger-btn {
+	position: relative;
+  width: $burgerBtnWidth;
+	height: $burgerBtnHeight;
+	color: $burgerBtnColor;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+
+  &__line { 
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: $burgerBtnWidth;
+    height: $burgerBtnLineHeight;
+    background-color: currentColor;
+
+    &::before,
+    &::after { 
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $burgerBtnLineHeight;
+    background-color: currentColor;
+    }
+
+    &::before { 
+      bottom: calc($burgerBtnLineHeight + $burgerBtnSpaceBetween);
+    }
+
+    &::after { 
+      top: calc($burgerBtnLineHeight + $burgerBtnSpaceBetween);
+    }
+  }
+}
