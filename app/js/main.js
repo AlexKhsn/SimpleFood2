@@ -52,21 +52,52 @@ mobileMenu.addEventListener('click', function (e) {
   }
 });
 
-function handleResize() {
-  const breakpoint = 767; // Здесь укажите свой брейкпоинт
+// Глобальная переменная для хранения состояния слайдера
+var isSliderInitialized = false;
+var restaurantsList = $('.restaurants__list');
 
-  if (window.innerWidth > breakpoint) {
-    // Закрываем меню, если разрешение экрана больше брейкпоинта
-    mobileMenu.classList.remove('burger-menu--active');
-    bodyLock.classList.remove('lock');
+// Инициализация Slick Slider
+function initSlider() {
+  if (restaurantsList.length && !isSliderInitialized) {
+    restaurantsList.slick({
+      dots: true,
+      arrows: false,
+      infinite: false,
+      // Другие опции и настройки
+    });
+
+    isSliderInitialized = true;
   }
 }
 
-// Навешиваем обработчик изменения размера экрана
-window.addEventListener('resize', handleResize);
+// Выключение Slick Slider
+function destroySlider() {
+  if (isSliderInitialized) {
+    restaurantsList.slick('unslick');
+    isSliderInitialized = false;
+  }
+}
 
-// Вызываем функцию handleResize при загрузке страницы
-window.addEventListener('load', handleResize);
+// Проверка брейкпоинта и инициализация/уничтожение слайдера
+function checkSlider() {
+  if (window.matchMedia("(max-width: 560px)").matches) {
+    initSlider();
+  } else {
+    destroySlider();
+  }
+}
+
+// Вызов проверки при загрузке страницы
+document.addEventListener('DOMContentLoaded', function() {
+  checkSlider();
+});
+
+// Добавление обработчика события изменения размеров окна
+window.addEventListener('resize', function() {
+  checkSlider();
+});
+
+
 
 
 $(function(){

@@ -217,3 +217,45 @@ body {
     background-color: rgba($borderColor, 0.5);
   }
 }
+
+.slick-dots { 
+  display: flex;
+  justify-content: center;
+
+  & button { 
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    background-color: $accentColor;
+    font-size: 0;
+    line-height: 0;
+    border-radius: 50%;
+    transition: background-color 0.6s ease, box-shadow 0.6s ease;
+
+    &:focus { 
+      box-shadow: 0 0 0 2px $primaryColor;
+    }
+    
+    &:hover { 
+      background-color: $focusBgColor;
+      box-shadow: 0 0 0 2px rgba($primaryColor, 0.7);
+    }
+    
+    &:active { 
+      background-color: $hoverBgColor;
+      box-shadow: none;
+    }
+  }
+
+  & > * { 
+    font-size: 0;
+  }
+
+  & > *:not(:last-child) { 
+    margin-right: 15px;
+  }
+
+  .slick-active button{ 
+    background-color: $secondaryColor;
+  }
+}

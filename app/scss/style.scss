@@ -673,7 +673,7 @@
 
   &__title { 
     text-align: left;
-    @include line-clamp(2);
+    @include line-clamp(3);
   }
 
   &__subtitle { 
@@ -684,13 +684,15 @@
     @include mq('phone') { 
       margin-bottom: 19px;
     }
+
+    margin-bottom: 29px;
   }
 
   &__items > *:not(:last-child) { 
     @include mq('phone') { 
       margin-bottom: 15px;
     }
-    margin-bottom: 20px;
+    margin-bottom: 17px;
   }
 
   &__item { 
@@ -712,7 +714,7 @@
     padding-left: 64px;
     color: $titleColor;
     font-size: 24px;
-    line-height: 1.5;
+    line-height: 1.6;
     @include line-clamp(1);
 
     &::before { 
@@ -720,8 +722,8 @@
         background-position: -34px 0;
       }
 
-      @include mq('tablet-2') { 
-        background-position: -32px -1px;
+      @include mq('tablet') { 
+        background-position: -34px -1px;
       }
 
       @include pseudo;
@@ -764,22 +766,42 @@
 
 .restaurants { 
   &__title { 
+    @include mq('phone') { 
+      margin-bottom: 14px;
+    }
+    
     margin-bottom: 45px;
   }
 
   &__list { 
+    @include mq('phone') { 
+      grid-template-columns: minmax(200px, 1fr);
+      gap: 10px;
+    }
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+
+    & .slick-list { 
+      padding: 15px 0 20px;
+    }
   }
 
   &__item { 
-    width: fit-content;
+    justify-self: center;
+  }
+
+  .restaurants__item .rest-card { 
+    @include mq('phone') { 
+      margin: 0 auto;
+    }
   }
 
   .rest-card { 
     flex: 1 1 auto;
     max-width: 370px;
+    min-width: 200px;
     box-shadow: 0 3px 3px 0 rgba($borderColor, 0.1);
     border-radius: 10px;
     overflow: hidden;
@@ -827,7 +849,6 @@
   
     &__img { 
       max-width: 100%;
-      max-height: 300px;
       object-fit: cover;
     }
   
@@ -844,6 +865,7 @@
         width: 100%;
         margin-bottom: 20px;
         font-size: 24px;
+        font-weight: 400;
         @include line-clamp(1);
     }
   
@@ -964,48 +986,6 @@
     @extend %rubik-400;
     color: $defaultColor;
     @include line-clamp(2);
-  }
-
-  .slick-dots { 
-    display: flex;
-    justify-content: center;
-  
-    & button { 
-      width: 15px;
-      height: 15px;
-      padding: 0;
-      background-color: $accentColor;
-      font-size: 0;
-      line-height: 0;
-      border-radius: 50%;
-      transition: background-color 0.6s ease, box-shadow 0.6s ease;
-  
-      &:focus { 
-        box-shadow: 0 0 0 2px $primaryColor;
-      }
-      
-      &:hover { 
-        background-color: $focusBgColor;
-        box-shadow: 0 0 0 2px rgba($primaryColor, 0.7);
-      }
-      
-      &:active { 
-        background-color: $hoverBgColor;
-        box-shadow: none;
-      }
-    }
-  
-    & > * { 
-      font-size: 0;
-    }
-  
-    & > *:not(:last-child) { 
-      margin-right: 15px;
-    }
-  
-    .slick-active button{ 
-      background-color: $secondaryColor;
-    }
   }
   
   .slick-list { 
