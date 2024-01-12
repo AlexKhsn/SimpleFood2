@@ -114,6 +114,14 @@ $(function(){
     nextArrow: $('.slick-next'),
     fade: true,
     infinite: false,
+    dotsClass: 'slick-dots testimonials__slick-dots',
+    responsive: [
+      {
+        breakpoint: 560,
+        settings: {
+          dots: false,
+        }
+      }],
     });
 
   $(".star").rateYo({

@@ -920,15 +920,50 @@
   position: relative;
 
   &__title { 
+    @include mq('phone') { 
+      margin-bottom: 30px;
+    }
+
     margin-bottom: 45px;
   }
 
   &__quote-inner { 
+    @include mq('tablet-2') { 
+      margin-left: 50px;
+    }
+
+    @include mq('tablet') { 
+      margin-left: 20px;
+    }
+
+    @include mq('phone') { 
+      flex-direction: column;
+      margin-left: 0;
+    }
+
     align-items: center;
     margin-left: 90px;
   }
   
   &__userpic { 
+    @include mq('tablet-2') { 
+      max-width: 240px;
+      height: 240px;
+    }
+
+    @include mq('tablet') { 
+      max-width: 180px;
+      height: 180px;
+      margin-right: 20px;
+    }
+
+    @include mq('phone') { 
+      width: 100px;
+      height: 100px;
+      margin-bottom: 29px;
+      margin-right: 0;
+    }
+
     max-width: 300px;
     width: 100%;
     height: 300px;
@@ -941,6 +976,24 @@
   }
 
   &__blockquote { 
+    @include mq('tablet-2') { 
+      margin-bottom: 28px;
+      font-size: 18px;
+    }
+
+    @include mq('tablet') { 
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+
+    @include mq('phone') { 
+      @include line-clamp(8);
+      margin-bottom: 21px;
+      margin-top: -20px;
+      padding: 20px 40px 0;
+      font-size: 14px;
+    }
+
     position: relative;
     margin-bottom: 30px;
     padding: 0 40px;
@@ -953,13 +1006,18 @@
       @include pseudo;
       width: 24px;
       height: 20px;
-      background-position: -20px 0;
+      background-position: -18px 0;
       background-size: cover;
       background-repeat: no-repeat;
       filter: invert(89%) sepia(0%) saturate(628%) hue-rotate(146deg) brightness(84%) contrast(105%);
     }
 
     &::before { 
+      @include mq('phone') { 
+        top: 12px;
+        left: 6px;
+      }
+
       top: 0;
       left: 0;
       transform: scaleX(-1);
@@ -967,6 +1025,11 @@
     }
 
     &::after { 
+      @include mq('phone') { 
+        bottom: 10px;
+        right: 6px;
+      }
+
       bottom: 0;
       right: 0;
       background-image: url("../images/sprite.svg#icon-quote");
@@ -974,12 +1037,24 @@
   }
 
   &__author { 
+    @include mq('tablet') { 
+      font-size: 18px;
+    }
+
+    @include mq('phone') { 
+      font-size: 16px;
+    }
+
     padding-left: 40px;
     @extend %rubik-500;
     color: $primaryColor;
   }
 
   &__author-descr { 
+    @include mq('phone') { 
+      margin-top: 10px;
+    }
+    
     max-width: 100%;
     margin-top: 15px;
     font-size: 14px;
@@ -993,6 +1068,18 @@
   }
 
   &__btn { 
+    @include mq('tablet-2') { 
+      top: 95%;
+    }
+
+    @include mq('tablet') { 
+      top: 94%;
+    }
+    
+    @include mq('phone') { 
+      top: 131px;
+    }
+
     position: absolute;
     top: 95.5%;
     padding: 0;
@@ -1022,10 +1109,18 @@
     }
   
     &--prev { 
+      @include mq('phone') { 
+        left: calc(50% - 137px)
+      }
+
       left: calc(50% - 112px);
     }
     
     &--next { 
+      @include mq('phone') { 
+        right: calc(50% - 137px)
+      }
+
       right: calc(50% - 112px);
     
       .testimonials__btn-img { 
