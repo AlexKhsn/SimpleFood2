@@ -1147,6 +1147,15 @@
 
 
 .app { 
+  @include mq('tablet-2') { 
+    padding-top: 120px;
+  }
+
+  @include mq('phone') { 
+    margin-top: -50px;
+    padding: 0;
+  }
+
   padding-top: 135px;
 
   &__inner { 
@@ -1154,6 +1163,15 @@
   }
 
   &__content { 
+    @include mq('desktop') { 
+      max-width: 400px;
+    }
+
+    @include mq('tablet-2') { 
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
     position: relative;
     padding: 40px 0;
     max-width: 540px;
@@ -1161,18 +1179,36 @@
   }
 
   &__bg { 
+    @include mq('tablet-2') { 
+      display: none;
+    }
+
     right: 0;
     max-width: 570px;
     max-height: 380px;
+    background-position: 0 0;
   }
 
   &__title { 
+    @include mq('phone') { 
+      margin-bottom: 15px;
+    }
+
     text-align: left;
     margin-bottom: 45px;
     @include line-clamp(2);
   }
 
   &__subtitle { 
+    @include mq('desktop') { 
+      font-size: 18px;
+    }
+
+    @include mq('phone') { 
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
     margin-bottom: 30px;
     @include line-clamp(3);
   }

@@ -80,7 +80,7 @@ function destroySlider() {
 
 // Проверка брейкпоинта и инициализация/уничтожение слайдера
 function checkSlider() {
-  if (window.matchMedia("(max-width: 560px)").matches) {
+  if (window.matchMedia("(max-width: 559px)").matches) {
     initSlider();
   } else {
     destroySlider();
