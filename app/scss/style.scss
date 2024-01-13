@@ -1236,18 +1236,39 @@
 
 // ---------------------------------FOOTER-------------------------------------
 
+.footer { 
+  @include mq('phone') { 
+    padding: 0;
+  }
+}
 
 .footer-top { 
+  @include mq('phone') { 
+    padding-bottom: 49px;
+  }
+
   position: relative;
   padding-bottom: 55px;
 
   &__inner { 
+    @include mq('tablet-2') { 
+      grid-template-columns: repeat(2, auto);
+    }
+
+    @include mq('tablet') { 
+      grid-template-columns: auto;
+    }
+
     display: grid;
-    grid-template-columns: 200px auto 258px;
+    grid-template-columns: 200px auto 180px;
+    justify-content: start;
     gap: 3.7vw;
   }
 
   &__column { 
+    @include mq('phone') { 
+      margin-bottom: 16px;
+    }
     max-width: 200px;
   }
 
@@ -1330,6 +1351,15 @@
 }
 
 .footer-menu { 
+  @include mq('tablet') { 
+    grid-template-columns: auto;
+    order: 3;
+  }
+
+  @include mq('phone') { 
+    gap: 20px;
+  }
+
   display: inline-grid;
   grid-template-columns: repeat(3, auto);
   gap: 3.7vw;
@@ -1355,6 +1385,14 @@
 }
 
 .footer-contacts { 
+  @include mq('tablet') { 
+    order: 2;
+  }
+
+  @include mq('phone') { 
+    margin-bottom: 15px;
+  }
+
   &__list { 
     margin-bottom: 12px;
 
@@ -1373,8 +1411,8 @@
   }
 
   &__icon { 
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     margin-right: 8px;
     stroke-width: 1.5;
     fill: none;
@@ -1441,6 +1479,10 @@
 }
 
 .footer-copy { 
+  @include mq('phone') { 
+    padding: 23px 0 15px;
+  }
+
   display: block;
   padding: 33px 0 27px;
   font-size: 14px;

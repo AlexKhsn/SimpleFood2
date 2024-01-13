@@ -52,6 +52,24 @@ mobileMenu.addEventListener('click', function (e) {
   }
 });
 
+function handleResize() {
+  const breakpoint = 767; // Здесь укажите свой брейкпоинт
+
+  if (window.innerWidth > breakpoint) {
+    // Закрываем меню, если разрешение экрана больше брейкпоинта
+    mobileMenu.classList.remove('burger-menu--active');
+    bodyLock.classList.remove('lock');
+  }
+}
+
+// Навешиваем обработчик изменения размера экрана
+window.addEventListener('resize', handleResize);
+
+// Вызываем функцию handleResize при загрузке страницы
+window.addEventListener('load', handleResize);
+
+
+
 // Глобальная переменная для хранения состояния слайдера
 var isSliderInitialized = false;
 var restaurantsList = $('.restaurants__list');
@@ -117,7 +135,7 @@ $(function(){
     dotsClass: 'slick-dots testimonials__slick-dots',
     responsive: [
       {
-        breakpoint: 560,
+        breakpoint: 559,
         settings: {
           dots: false,
         }
