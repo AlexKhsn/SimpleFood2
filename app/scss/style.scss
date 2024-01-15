@@ -10,24 +10,6 @@
 
 
 .header { 
-  @include mq('tablet-2') { 
-    padding: 43px 0;
-  }
-  @include mq('tablet') { 
-    padding: 28px 0 29px;
-  }
-  @include mq('phone') { 
-    padding: 13px 0 14px;
-  }
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  padding: 57px 0;
-  transition: padding 0.3s ease, background-color 0.3s ease;
-
   &__logo { 
     margin-right: auto;
 
@@ -39,6 +21,47 @@
     @include mq ('phone') { 
       width: 116px;
       height: 23px;
+    }
+  }
+
+  &__fixed { 
+    @include mq('tablet-2') { 
+      padding: 43px 0;
+    }
+    @include mq('tablet') { 
+      padding: 28px 0 29px;
+    }
+    @include mq('phone') { 
+      padding: 13px 0 14px;
+    }
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 57px 0;
+    transition: padding 0.3s ease, background-color 0.3s ease;
+
+    &--scroll { 
+      @include mq('tablet-2') { 
+        padding: 25px 0;
+      }
+  
+      @include mq('tablet') { 
+        padding: 20px 0;
+      }
+  
+      @include mq('phone') { 
+        padding: 13px 0;
+      }
+
+      @include mqheight('phoneHeight') { 
+        padding: 10px 0;
+      }
+  
+      padding: 25px 0;
+      background-color: $headerBgColor;
     }
   }
 
@@ -67,23 +90,6 @@
     @include mq('phone') { 
       margin-right: 10px;
     }
-  }
-
-  &--scroll { 
-    @include mq('tablet-2') { 
-      padding: 25px 0;
-    }
-
-    @include mq('tablet') { 
-      padding: 20px 0;
-    }
-
-    @include mq('phone') { 
-      padding: 13px 0;
-    }
-
-    padding: 25px 0;
-    background-color: $headerBgColor;
   }
 }
 
@@ -182,14 +188,15 @@
 }
 
 .burger-menu { 
-  position: absolute;
+  position: fixed;
   top: 0;
   left: -100%;
   z-index: 10;
-  height: 100%;
+  height: 100vh;
   background-color: $cardBgColor;
   opacity: 0;
   transition: left 200ms linear, opacity 0.3s ease;
+  overflow-y: scroll;
 
   &__top { 
     padding: 22px 0 25px;
@@ -233,7 +240,7 @@
 
       &::after { 
         top: calc($burgerBtnLineHeight + $popupBurgerBtnSpaceBetween);
-        transform: rotate(-45deg);
+        transform: rotate(-45deg) translateX(-1px);
       }
     }
   }
@@ -294,38 +301,36 @@
 .hero { 
   @include mq('tablet-2') { 
     margin-top: 129px;
+    padding: 121px 0;
   }
 
   @include mq('tablet') { 
     margin-top: 99px;
+    padding: 65px 0;
   }
 
   @include mq('phone') { 
     margin-top: 72px;
+    padding: 25px 0;
   }
   
   margin-top: 159px;
+  padding: 156px 0 155px;
 
   &__inner { 
-    @include mq('tablet-2') { 
-      height: calc(100vh - 129px);
-    }
-
-    @include mq('tablet') { 
-      height: calc(100vh - 99px);
-    }
-    
-    @include mq('phone') { 
-      height: auto;
-      padding: 25px 0;
-    }
-
     position: relative;
-    height: calc(100vh - 159px);
   }
 
   &__bg { 
+    @include mq('tablet-2') { 
+      width: 488px;
+      height: 540px;
+    }
+
     @include mq('tablet') { 
+      width: 416px;
+      height: 420px;
+
       &::before { 
         content: "";
         position: absolute;
@@ -333,10 +338,15 @@
         background-color: $heroBg;
       }
     }
+
+    @include mq('phone') { 
+      width: 345px;
+      height: 300px;
+    }
     
     right: 0;
-    max-width: 560px;
-    max-height: 660px;
+    width: 560px;
+    height: 660px;
   }
 
   &__content { 
@@ -345,8 +355,6 @@
     }
 
     max-width: 450px;
-    margin: auto 0;
-    z-index: 1; 
 
     & > *:not(:last-child) { 
       margin-bottom: 20px;
@@ -371,6 +379,7 @@
   }
 
   &__title-emphasized { 
+    display: block;
     color: $primaryColor;
   }
 
@@ -391,7 +400,7 @@
   
     @include mq('phone') { 
       font-size: 14px;
-      margin-right: 30px;
+      margin-right: 27px;
       padding: 8px 24px;
     }
   
@@ -539,6 +548,11 @@
 
     @include mq('tablet-2') { 
       gap: 15px;
+      margin-bottom: 50px;
+    }
+
+    @include mq('tablet') { 
+      margin-bottom: 40px;
     }
 
     @include mq('phone') { 
@@ -554,16 +568,16 @@
     margin-bottom: 60px;
   }
 
-  &__products-item { 
-    justify-content: center;
-  }
-
   &__more { 
       display: block;
       margin: 0 auto;
   }
 
   .product-card { 
+    @include mq('desktop') { 
+      max-width: 100%;
+    }
+
       flex: 1 1 auto;
       flex-direction: column;
       max-width: 210px;
@@ -661,10 +675,8 @@
       max-width: 450px;
     }
 
-    position: relative;
     max-width: 470px;
     margin-left: auto;
-    z-index: 1;
 
     & > *:not(:last-child) { 
       margin-bottom: 30px;
@@ -774,6 +786,11 @@
   }
 
   &__list { 
+    @include mq('tablet-2') { 
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
     @include mq('phone') { 
       grid-template-columns: minmax(200px, 1fr);
       gap: 10px;
@@ -788,20 +805,9 @@
     }
   }
 
-  &__item { 
-    justify-self: center;
-  }
-
-  .restaurants__item .rest-card { 
-    @include mq('phone') { 
-      margin: 0 auto;
-    }
-  }
-
   .rest-card { 
     flex: 1 1 auto;
-    max-width: 370px;
-    min-width: 200px;
+    max-width: 100%;
     box-shadow: 0 3px 3px 0 rgba($borderColor, 0.1);
     border-radius: 10px;
     overflow: hidden;
@@ -848,7 +854,7 @@
     }
   
     &__img { 
-      max-width: 100%;
+      width: 100%;
       object-fit: cover;
     }
   
@@ -1163,13 +1169,8 @@
   }
 
   &__content { 
-    @include mq('desktop') { 
-      max-width: 400px;
-    }
-
     @include mq('tablet-2') { 
       max-width: 540px;
-      margin: 0 auto;
     }
 
     position: relative;
@@ -1180,6 +1181,15 @@
 
   &__bg { 
     @include mq('tablet-2') { 
+      &::before { 
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: $heroBg;
+      }
+    }
+
+    @include mq('phone') { 
       display: none;
     }
 
@@ -1252,11 +1262,12 @@
 
   &__inner { 
     @include mq('tablet-2') { 
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: auto 1fr;
     }
 
-    @include mq('tablet') { 
-      grid-template-columns: auto;
+    @include mq('phone') { 
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
     }
 
     display: grid;
@@ -1352,11 +1363,16 @@
 
 .footer-menu { 
   @include mq('tablet') { 
-    grid-template-columns: auto;
-    order: 3;
   }
 
-  @include mq('phone') { 
+  @include mq('tablet-2') { 
+    order: 3;
+    grid-column: 1/4;
+  }
+
+  @include mq('phone') {
+    grid-column: auto;
+    grid-template-columns: 1fr; 
     gap: 20px;
   }
 
@@ -1384,8 +1400,8 @@
   }
 }
 
-.footer-contacts { 
-  @include mq('tablet') { 
+.contacts { 
+  @include mq('tablet-2') { 
     order: 2;
   }
 

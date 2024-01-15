@@ -153,7 +153,7 @@ $(function(){
   $('input, select').styler();
 
   $(window).scroll(function(){
-    $('.header').toggleClass('header--scroll', $(this).scrollTop() > 20);
+    $('.header__fixed').toggleClass('header__fixed--scroll', $(this).scrollTop() > 20);
   });
 });
 
