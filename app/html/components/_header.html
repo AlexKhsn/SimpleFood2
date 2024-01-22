@@ -1,0 +1,191 @@
+    <header class="header" id="header">
+      <div class="header__fixed">
+        <div class="container">
+          <nav class="header__inner d-flex">
+            <a class="logo header__logo" href="#header">
+              <img class="logo__img" src="./images/logo.svg" width="200" height="39" alt="Логотип сайта">
+            </a>
+
+            <ul class="menu header__menu d-flex">
+              <li class="menu__item">
+                <a class="more animation-link menu__link menu__link--active" href="#header">
+                  Главная
+                </a>
+              </li>
+
+              <li class="menu__item">
+                <a class="more animation-link menu__link" href="#">
+                  Блюда
+                </a>
+              </li>
+
+              <li class="menu__item">
+                <a class="more animation-link menu__link" href="#contacts">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+
+            <ul class="user-nav d-flex header__user-nav">
+              <li class="user-nav__item">
+                <button class="user-nav__btn d-flex" type="button">
+                  <span class="sr-only">
+                    Поиск
+                  </span>
+
+                  <svg class="user-nav__img" width="21" height="22">
+                    <use xlink:href="images/sprite.svg#icon-search"></use>
+                  </svg>
+                </button>
+              </li>
+
+              <li class="user-nav__item">
+                <button class="user-nav__btn d-flex" type="button">
+                  <span class="sr-only">
+                    Корзина
+                  </span>
+
+                  <span class="user-nav__value">
+                    4
+                  </span>
+
+                  <svg class="user-nav__img" width="21" height="22">
+                    <use xlink:href="images/sprite.svg#icon-cart"></use>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+
+            <button class="burger-btn" id="burger-btn1" type="button">
+              <span class="sr-only">
+                Открыть меню
+              </span>
+
+              <span class="burger-btn__line"></span>
+            </button>
+          </nav>
+        </div>
+      </div>
+
+      <nav class="burger-menu">
+        <div class="burger-menu__top">
+          <div class="container">
+            <div class="burger-menu__top-inner">
+              <a class="logo burger-menu__logo" href="#header">
+                <img class="logo__img" src="./images/logo.svg" width="200" height="39" alt="Логотип сайта">
+              </a>
+
+              <button class="burger-btn burger-menu__burger-btn" id="burger-btn2" type="button">
+                <span class="sr-only">
+                  Закрыть меню
+                </span>
+                <span class="burger-btn__line"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="burger-menu__menu-wrapper">
+          <div class="container">
+            <ul class="menu burger-menu__menu">
+              <li class="menu__item">
+                <a class="more animation-link menu__link menu__link--active" href="#header">
+                  Главная
+                </a>
+              </li>
+
+              <li class="menu__item">
+                <a class="more animation-link menu__link" href="#">
+                  Блюда
+                </a>
+              </li>
+
+              <li class="menu__item">
+                <a class="more animation-link menu__link" href="#contacts">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="burger-menu__address-wrapper">
+          <div class="container">
+            <address class="contacts">
+              <ul class="contacts__list">
+                <li class="contacts__item contacts__item--map">
+                  <a class="more animation-link contacts__link d-flex" href="#" target="_blank">
+                    <svg class="contacts__icon" width="20" height="20">
+                      <use xlink:href="images/sprite.svg#icon-map"></use>
+                    </svg>
+                    ул. Т.Г. Шевченко, 1
+                  </a>
+                </li>
+
+                <li class="contacts__item contacts__item--tel">
+                  <a class="more animation-link contacts__link d-flex" href="tel:380501112233">
+                    <svg class="contacts__icon" width="20" height="20">
+                      <use xlink:href="images/sprite.svg#icon-tel"></use>
+                    </svg>
+                    380501112233
+                  </a>
+                </li>
+
+                <li class="contacts__item contacts__item--email">
+                  <a class="more animation-link contacts__link d-flex" href="mailto:support@sfood.com">
+                    <svg class="contacts__icon" width="20" height="20">
+                      <use xlink:href="images/sprite.svg#icon-email"></use>
+                    </svg>
+                    support@sfood.com
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="socials contacts__socials d-flex">
+                <li class="socials__item">
+                  <a class="socials__link d-flex" href="#" target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">
+                      Facebook
+                    </span>
+                    
+                    <div class="socials__wrapper d-flex">
+                      <svg class="socials__icon" width="10" height="21">
+                        <use xlink:href="images/sprite.svg#icon-facebook"></use>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="socials__item">
+                  <a class="socials__link d-flex" href="#" target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">
+                      Twitter
+                    </span>
+
+                    <div class="socials__wrapper d-flex">
+                      <svg class="socials__icon" width="21" height="17">
+                        <use xlink:href="images/sprite.svg#icon-twitter"></use>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="socials__item">
+                  <a class="socials__link d-flex" href="#" target="_blank" rel="noopener noreferrer">
+                    <span class="sr-only">
+                      Instagram
+                    </span>
+
+                    <div class="socials__wrapper d-flex">
+                      <svg class="socials__icon" width="20" height="20">
+                        <use xlink:href="images/sprite.svg#icon-instagram"></use>
+                      </svg>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </address>
+          </div>
+        </div>
+      </nav>
+    </header>

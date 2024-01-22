@@ -1,20 +1,23 @@
 $primaryColor: #ff6838;
 $secondaryColor: #ff7a50;
-$hoverBgColor: #FFAE94;
+$hoverBgColor: #ffae94;
 $focusShdadowColor: #ff9674;
-$focusBgColor: #FFF2ED;
+$focusBgColor: #fff2ed;
 $titleColor: #363853;
 $defaultColor: #31352b;
+$breadcrumbsArrowColor: #505050;
+$breadcrumbsBgColor: #ff7a501a;
 $accentColor: #c2c2c2;
 $accentLightColor: #ececec;
 $bgColor: #f9faff;
 $cardBgColor: #ffffff;
 $borderColor: #000000;
-$headerBgColor: #ecedf2;
+$headerBgColor: #edeef3;
 $borderFocusColor: #c2c2c200;
 $bgLineColor: #EEEFF3;
 $burgerBtnColor: $titleColor;
-$heroBg: rgba(249, 250, 255, 0.85);
+$heroBg: #f9faffd9;
+$checkboxColor: #FAEDED;
 
 $burgerBtnWidth: 30px;
 $burgerBtnHeight: 22px;
@@ -59,6 +62,16 @@ $popupBurgerBtnSpaceBetween: 6.5px;
 @function min($numbers...) {
   @return m#{i}n(#{$numbers});
 }
+
+
+%checkbox-hidden { 
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
 
 
 

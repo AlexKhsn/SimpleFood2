@@ -102,9 +102,13 @@
     }
   }
 
+  &__link { 
+    font-size: 18px;
+  }
+
   &__link--active { 
     color: $primaryColor;
-    }
+  }
 }
 
 .user-nav { 
@@ -423,8 +427,6 @@
 
 
 .popular-categories { 
-  overflow: hidden;
-
   &__title { 
     @include mq('phone') { 
       margin-bottom: 28px;
@@ -573,67 +575,67 @@
       margin: 0 auto;
   }
 
-  .product-card { 
-    @include mq('desktop') { 
-      max-width: 100%;
-    }
-
-      flex: 1 1 auto;
-      flex-direction: column;
-      max-width: 210px;
-      padding-bottom: 20px;
-      background-color: $cardBgColor;
-      box-shadow: 0 0 0 1px $accentLightColor;
-      border-radius: 5px;
-      transition: box-shadow 0.6s ease;
-    
-      &:hover { 
-        box-shadow: 0 0 0 1px $primaryColor;
-      }
-    
-      &__link { 
-        flex: 1 1 auto;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        padding: 20px 15px 0;
-        text-align: center;
-      }
-    
-      &__img { 
-        max-width: 140px;
-        max-height: 140px;
-        margin-bottom: 10px;
-        object-fit: cover;
-      }
-    
-      &__label { 
-          flex: 1 1 auto;
-          max-width: 100%;
-          font-size: 15px;
-          font-weight: 400;
-          line-height: 1.250;
-          @include line-clamp(2);
-      }
-    
-      &__price { 
-        margin-top: 10px;
-        font-size: 15px;
-        @extend %rubik-500;
-        color: $titleColor;
-      }
-    
-      &__btn { 
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 7px 16px;
-        font-size: 14px;
-        letter-spacing: normal;
-      }
-  }
 }
 
+.product-card { 
+  @include mq('desktop') { 
+    max-width: 100%;
+  }
+
+  flex: 1 1 auto;
+  flex-direction: column;
+  max-width: 210px;
+  padding-bottom: 20px;
+  background-color: $cardBgColor;
+  box-shadow: 0 0 0 1px $accentLightColor;
+  border-radius: 5px;
+  transition: box-shadow 0.6s ease;
+
+  &:hover { 
+    box-shadow: 0 0 0 1px $primaryColor;
+  }
+
+  &__link { 
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 20px 15px 0;
+    text-align: center;
+  }
+
+  &__img { 
+    max-width: 140px;
+    max-height: 140px;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+  
+  &__label { 
+      flex: 1 1 auto;
+      max-width: 100%;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.250;
+      @include line-clamp(2);
+  }
+
+  &__price { 
+    margin-top: 10px;
+    font-size: 15px;
+    @extend %rubik-500;
+    color: $titleColor;
+  }
+
+  &__btn { 
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 7px 16px;
+    font-size: 14px;
+    letter-spacing: normal;
+  }
+}
 
 //------------------------------FEATURES---------------------------------------
 
@@ -805,119 +807,119 @@
     }
   }
 
-  .rest-card { 
-    flex: 1 1 auto;
-    max-width: 100%;
-    box-shadow: 0 3px 3px 0 rgba($borderColor, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: box-shadow 0.6s ease;
-  
-    &:hover { 
-      box-shadow: 0 3px 15px 0 rgba($primaryColor, 0.5);
-    }
-  
-    &__link { 
-      flex: 1 1 auto;
-      flex-direction: column;
-      width: 100%;
-  
-      &:focus { 
-        .rest-card__go { 
-          background-color: $focusBgColor;
-          box-shadow: 0 0 0 2px rgba($primaryColor, 0.7);
-        }
-    
-        .rest-card__go-arrow { 
-          fill: $primaryColor;
-        }
-      }
-  
-      &:hover { 
-        .rest-card__go { 
-          background-color: transparent;
-          box-shadow: 0 0 0 2px rgba($primaryColor, 0.7);
-        }
-        
-        .rest-card__go-arrow { 
-          transform: translateX(20px);
-          fill: $primaryColor;
-        }
-      }
-  
-      &:active { 
-        .rest-card__go { 
-          background-color: $focusBgColor;
-          box-shadow: 0 0 0 2px transparent;
-        }
-      }
-    }
-  
-    &__img { 
-      width: 100%;
-      object-fit: cover;
-    }
-  
-    &__info { 
-      flex-direction: column;
-      flex: 1 1 auto;
-      width: 100%;
-      padding: 15px 20px 20px;
-      background-color: $cardBgColor;
-    }
-  
-    &__label { 
-        flex: 1 1 auto;
-        width: 100%;
-        margin-bottom: 20px;
-        font-size: 24px;
-        font-weight: 400;
-        @include line-clamp(1);
-    }
-  
-    &__info-row { 
-      align-items: center;
-      justify-content: space-between;
-    }
-  
-    &__time { 
-      position: relative;
-      padding-left: 32px;
-      font-size: 18px;
-      line-height: 1.4;
-      @extend %rubik-300;
-      opacity: 0.9;
-  
-      &::before { 
-        @include pseudo;
-        top: 0;
-        left: 0;
-        width: 22px;
-        height: 22px;
-        background: url("../images/sprite.svg#icon-time") -22px 0/ cover no-repeat;
-        filter: invert(16%) sepia(30%) saturate(253%) hue-rotate(42deg) brightness(98%) contrast(91%);
-      }
-    }
-  
-    &__go { 
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      width: 80px;
-      height: 33px;
-      background-color: $primaryColor;
-      border-radius: 20px;
-      transition: background-color 0.6s ease, box-shadow 0.6s ease;
-    }
-  
-    &__go-arrow { 
-      fill: $cardBgColor;
-      transition: transform 0.6s ease, fill 0.6s ease;
-    }
-  }
 }
 
+.rest-card { 
+  flex: 1 1 auto;
+  max-width: 100%;
+  box-shadow: 0 3px 3px 0 rgba($borderColor, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.6s ease;
+
+  &:hover { 
+    box-shadow: 0 3px 15px 0 rgba($primaryColor, 0.5);
+  }
+
+  &__link { 
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: 100%;
+
+    &:focus { 
+      .rest-card__go { 
+        background-color: $focusBgColor;
+        box-shadow: 0 0 0 2px rgba($primaryColor, 0.7);
+      }
+  
+      .rest-card__go-arrow { 
+        fill: $primaryColor;
+      }
+    }
+
+    &:hover { 
+      .rest-card__go { 
+        background-color: transparent;
+        box-shadow: 0 0 0 2px rgba($primaryColor, 0.7);
+      }
+      
+      .rest-card__go-arrow { 
+        transform: translateX(20px);
+        fill: $primaryColor;
+      }
+    }
+
+    &:active { 
+      .rest-card__go { 
+        background-color: $focusBgColor;
+        box-shadow: 0 0 0 2px transparent;
+      }
+    }
+  }
+
+  &__img { 
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__info { 
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 15px 20px 20px;
+    background-color: $cardBgColor;
+  }
+
+  &__label { 
+      flex: 1 1 auto;
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 400;
+      @include line-clamp(1);
+  }
+
+  &__info-row { 
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__time { 
+    position: relative;
+    padding-left: 32px;
+    font-size: 18px;
+    line-height: 1.4;
+    @extend %rubik-300;
+    opacity: 0.9;
+
+    &::before { 
+      @include pseudo;
+      top: 0;
+      left: 0;
+      width: 22px;
+      height: 22px;
+      background: url("../images/sprite.svg#icon-time") -22px 0/ cover no-repeat;
+      filter: invert(16%) sepia(30%) saturate(253%) hue-rotate(42deg) brightness(98%) contrast(91%);
+    }
+  }
+
+  &__go { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 80px;
+    height: 33px;
+    background-color: $primaryColor;
+    border-radius: 20px;
+    transition: background-color 0.6s ease, box-shadow 0.6s ease;
+  }
+
+  &__go-arrow { 
+    fill: $cardBgColor;
+    transition: transform 0.6s ease, fill 0.6s ease;
+  }
+}
 
 //------------------------------TESTIMONIALS-----------------------------------
 
@@ -1145,6 +1147,12 @@
   .slick-disabled .testimonials__btn-img { 
     fill: $secondaryColor;
     border-color: $secondaryColor;
+  }
+
+  &__slick-dots { 
+    @include mq('phone') { 
+      display: none !important;
+    }
   }
 }
 
@@ -1503,4 +1511,782 @@
   padding: 33px 0 27px;
   font-size: 14px;
   text-align: center;
+}
+
+
+//--------------------------------CATALOG--------------------------------------
+
+.breadcrumbs { 
+  @include mq('tablet-2') { 
+    margin-top: 129px;
+  }
+
+  @include mq('tablet') { 
+    margin-top: 99px;
+  }
+
+  @include mq('phone') { 
+    margin-top: 72px;
+  }
+
+  margin-top: 159px;
+  padding: 24px 0;
+  background-color: $breadcrumbsBgColor;
+
+  &__list { }
+
+  &__item { 
+    position: relative;
+    font-size: 14px;
+    line-height: 1.15;
+
+    &:not(:last-child) { 
+      margin-right: 5px;
+      padding-right: 12px;
+
+      &::after { 
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 10px;
+        background-image: url('../images/sprite.svg#icon-breadcrumbs-arrow');
+        background-position: -12px 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: invert(100%) sepia(1%) saturate(2032%) hue-rotate(298deg) brightness(83%) contrast(80%);
+      }
+    }
+  }
+
+  &__link { 
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: 0.42px;
+    color: $breadcrumbsArrowColor;
+  }
+
+  &__link--active { }
+}
+
+.catalog { 
+  @include mq('phone') { 
+    padding-top: 40px;
+  }
+
+  padding-top: 60px;
+  margin-bottom: -15px;
+
+  &__top { 
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+    @include mq('tablet') { 
+      flex-direction: column;
+    }
+
+    @include mq('phone') { 
+      margin-bottom: 31px;
+    }
+
+    .title { 
+      @include mq('tablet') { 
+        margin-bottom: 20px;
+        text-align: left;
+      }
+    }
+  }
+
+  .filter-btn { 
+    display: none;
+    position: relative;
+    width: 47px;
+    height: 47px;
+    border-radius: 3px;
+    background-color: $checkboxColor;
+
+    @include mq('tablet') { 
+      display: inline-flex;
+    }
+
+    &::before { 
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 32px;
+      height: 36px;
+      background-image: url("../images/sprite.svg#icon-filter-btn");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: invert(52%) sepia(86%) saturate(2564%) hue-rotate(337deg) brightness(102%) contrast(101%);
+    }
+  }
+
+  &__filter-selects { 
+    display: flex;
+    align-items: center;
+
+    & > *:not(:last-child) { 
+      @include mq('phone') { 
+        margin-right: 6px;
+      }
+
+      margin-right: 7px;
+    }
+
+    .jq-selectbox.focused .jq-selectbox__select { 
+      border-color: $primaryColor;
+    }
+
+    .jq-selectbox:hover {
+      .jq-selectbox__select-text { 
+        color: $primaryColor;
+      }
+
+      .jq-selectbox__select { 
+        border-color: $primaryColor;
+      }
+
+      .jq-selectbox__trigger-arrow { 
+        filter: invert(59%) sepia(33%) saturate(5783%) hue-rotate(336deg) brightness(100%) contrast(102%);
+      }
+    }
+
+    .jq-selectbox.opened {
+      .jq-selectbox__select-text { 
+        color: $defaultColor;
+      }
+
+      .jq-selectbox__select { 
+        border-color: $accentColor;
+      }
+
+      .jq-selectbox__trigger-arrow { 
+        filter: invert(83%) sepia(5%) saturate(28%) hue-rotate(316deg) brightness(91%) contrast(97%);
+      }
+    }
+
+    & .jq-selectbox { 
+      z-index: 1;
+    }
+
+    & .jq-selectbox__select { 
+      @include mq('phone') { 
+        padding: 15px 33px 10px 10px;
+      }
+
+      height: auto;
+      padding: 15px 41px 13px 13px;
+      background: none;
+      background-color: $cardBgColor;
+      border: 1px solid $accentColor;
+      border-radius: 3px;
+      box-shadow: none;
+      transition: border-color 0.6s ease;
+    }
+
+    & .jq-selectbox__select-text { 
+      line-height: 1.2;
+      letter-spacing: 0.42px;
+      @extend %rubik-400;
+      color: $defaultColor;
+      transition: color 0.6s ease;
+    }
+
+    & .jq-selectbox__trigger { 
+      @include mq('phone') { 
+        right: -5px;
+      }
+
+      border: none;
+    }
+
+    & .jq-selectbox__trigger-arrow { 
+      top: 17px;
+      left: 10px;
+      transform: rotate(90deg);
+      width: 7px;
+      height: 11px;
+      border: none;
+      background-image: url('../images/sprite.svg#icon-breadcrumbs-arrow');
+      background-position: -13px 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: invert(83%) sepia(5%) saturate(28%) hue-rotate(316deg) brightness(91%) contrast(97%);
+      transition: filter 0.6s ease;
+    }
+
+    & .jq-selectbox__dropdown { 
+      top: 47px;
+    }
+  }
+
+  &__content { 
+  }
+
+  &__content-inner { 
+    width: 100%;
+
+    & .pagination { 
+      @include mq('phone') { 
+        margin-bottom: 51px;
+      }
+
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__products { 
+    @include mq('desktop') { 
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mq('tablet-2') { 
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq('phone') { 
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: auto;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px 4px;
+      margin-bottom: 29px;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: max-content;
+    align-self: start;
+    gap: 10px;
+    margin-bottom: 60px;
+  }
+
+  &__products-item { 
+      &:nth-child(n+7) { 
+        @include mq('phone') { 
+          display: none;
+        }
+      }
+
+    display: flex;
+  }
+
+
+  &__filters { 
+    @include mq('desktop') { 
+      margin-right: 20px;
+    }
+
+    @include mq('tablet-2') { 
+      margin-right: 20px;
+    }
+
+    @include mq('tablet') { 
+      position: fixed;
+      left: -300%;
+    }
+    margin-right: 30px;
+    & > *:not(:last-child) { 
+      margin-bottom: 30px;
+    }
+
+    width: 270px;
+    flex-shrink: 0;
+    transition: left 0.4s ease;
+  }
+}
+
+.filter { 
+  
+
+  &__item { 
+    width: 100%;
+    border: 1px solid $accentLightColor;
+    border-radius: 5px;
+    background-color: $cardBgColor;
+  }
+
+  &__title { 
+    padding: 15px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0.72px;
+    color: $titleColor;
+    border-bottom: 1px solid $accentLightColor;
+  }
+}
+
+.filter-categories { 
+  &__list { 
+    padding: 25px 15px 23px;
+  }
+
+  &__item { 
+    font-size: 18px;
+    line-height: 0;
+    color: $defaultColor;
+
+    &:not(:last-child) { 
+      margin-bottom: 12px;
+    }
+  }
+
+  &__link { 
+    line-height: 1.28;
+    letter-spacing: 0.54px;
+    color: inherit;
+  }
+
+  &__link--active { 
+    color: $primaryColor;
+  }
+}
+
+.filter-offers { 
+  &__form { 
+    padding: 25px 15px 25px 14px;
+  }
+
+  &__label { 
+    position: relative;
+    display: block;
+    padding-left: 36px;
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: 0.54px;
+    color: $defaultColor;
+    transition: color 0.6s ease;
+
+    &:not(:last-child) { 
+      margin-bottom: 10px;
+    }
+
+    &:hover { 
+      color: $primaryColor;
+
+      & .filter-offers__checkbox { 
+        border: 1px solid $primaryColor;
+      }
+    }
+  }
+
+  &__input { 
+    @extend %checkbox-hidden;
+
+    &:checked + .filter-offers__checkbox { 
+      border-color: $titleColor;
+      background-image: url('../images/sprite.svg#icon-check');
+      background-position: center;
+      background-size: 35px 10px;
+      background-repeat: no-repeat;
+    }
+
+    &:focus + .filter-offers__checkbox { 
+      border: 1px solid $primaryColor;
+    }
+  }
+
+  &__checkbox { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $accentLightColor;
+    border-radius: 3px;
+    background-color: $checkboxColor;
+    transition: border 0.6s ease;
+  }
+}
+
+.filter-range { 
+  & .filter__title { 
+    padding: 15px 15px 13px;
+  }
+
+  &__form { 
+    max-width: 240px;
+    margin: 0 auto;
+    padding: 24px 0;
+  }
+
+  &__label { 
+  }
+
+  &__input { }
+
+  &__extra-controls { 
+    justify-content: space-between;
+
+    & > *:not(:last-child) { 
+      margin-right: 21px;
+    }
+  }
+
+  &__price { 
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.48px;
+    border: 1px solid $checkboxColor;
+    border-radius: 3px;
+    color: $defaultColor;
+    background-color: $checkboxColor;
+    transition: border 0.6s ease;
+
+    &:focus { 
+      border: 1px solid $primaryColor;
+    }
+  }
+
+  &__text { 
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.48px;
+    color: $accentColor;
+  }
+
+  &__from { }
+
+  &__to { }
+
+  .irs-from,
+  .irs-to,
+  .irs-min,
+  .irs-max { 
+    display: none;
+  }
+
+  .irs-line { 
+    top: 34px;
+    height: 2px;
+    background-color: $accentColor;
+  }
+
+  .irs-bar { 
+    top: 34px;
+    height: 2px;
+    background-color: $primaryColor;
+  }
+
+  .irs-handle { 
+    top: 26px;
+    width: 18px;
+    height: 18px;
+    border: none;
+    box-shadow: none;
+    background-color: $primaryColor;
+
+    &:hover { 
+      background-color: $secondaryColor;
+    }
+  }
+
+  .irs--round { 
+    height: 44px;
+  }
+}
+
+.pagination { 
+  @include mq('phone') { 
+    margin-bottom: 60px;
+  }
+  display: inline-flex;
+
+  
+
+  &__item { 
+    &:nth-child(3),
+    &:nth-child(5) { 
+    @include mq('phone') { 
+      display: none;
+    }
+  }
+    &:not(:last-child) { 
+      margin-right: 6px;
+    }
+  }
+
+  &__link { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 0.54px;
+    border-radius: 3px;
+    color: $titleColor;
+    background-color: $checkboxColor;
+    box-shadow: 0px 0px 0px 2px transparent, 0px -1px 4px 2px transparent inset;
+    transition: color 0.6s ease, background-color 0.6s ease, box-shadow 0.6s ease;
+  }
+
+  &__link--active { 
+    border: 1px solid $titleColor;
+  }
+
+  &__link--animation { 
+    &:focus { 
+      box-shadow: 0px 0px 0px 2px $primaryColor;
+    }
+
+    &:hover { 
+      background-color: $primaryColor;
+      color: $cardBgColor;
+    }
+
+    &:active { 
+      color: $titleColor;
+      background-color: $checkboxColor;
+      box-shadow: 0px -1px 4px 2px rgba($borderColor, 0.15) inset;
+    }
+
+    &:hover::before { 
+      filter: invert(100%) sepia(35%) saturate(1217%) hue-rotate(193deg) brightness(110%) contrast(109%);
+    }
+
+    &:active::before { 
+      filter: invert(17%) sepia(4%) saturate(5079%) hue-rotate(198deg) brightness(105%) contrast(85%);
+    }
+  }
+
+  &__nav { 
+    position: relative;
+
+    &::before { 
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 11px;
+      height: 18px;
+      background-image: url('../images/sprite.svg#icon-breadcrumbs-arrow');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: -21px 0;
+      filter: invert(17%) sepia(4%) saturate(5079%) hue-rotate(198deg) brightness(105%) contrast(85%);
+      transition: filter 0.6s ease;
+    }
+  }
+
+  &__nav--active::before { 
+    filter: invert(87%) sepia(0%) saturate(1%) hue-rotate(278deg) brightness(90%) contrast(90%);
+  }
+
+  &__prev { 
+    transform: rotate(180deg);
+  }
+
+  &__next { 
+
+  }
+
+  &__more { }
+}
+
+.promotion { 
+  @include mq('phone') { 
+    margin-bottom: 40px;
+    padding-top: 0;
+  }
+
+  padding-top: 120px;
+  margin-bottom: -3px;
+
+  .title { 
+    @include mq('phone') { 
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    text-align: left;
+    margin-bottom: 60px;
+  }
+
+  &__list { 
+    @include mq('tablet-2') { 
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include mq('phone') { 
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      gap: 39px;
+    }
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 30px;
+  }
+
+  &__item { 
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .rest-card__info-label { 
+    font-size: 24px;
+    line-height: 1.3;
+  }
+}
+
+.catalog__filters--hidden { 
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 320px;
+  height: 100vh;
+  margin-right: 0;
+  padding: 80px 50px 80px 0;
+  background-color: $cardBgColor;
+  overflow-y: auto;
+}
+
+.catalog__filters-btn { 
+  @include mq('tablet') { 
+    display: block;
+  }
+
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: $checkboxColor;
+}
+
+.catalog__filters-btn-line { 
+  display: block;
+  position: relative;
+  left: 55%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 1px;
+  background-color: transparent;
+  
+  &::before,
+  &::after { 
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 1px;
+    background-color: $defaultColor;
+    border-radius: 3px;
+    transform-origin: left;
+  }
+
+  &::before { 
+    top: 5px;
+    left: 0;
+    transform: rotate(-45deg);
+  }
+
+  &::after { 
+    top: -8px;
+    left: 0;
+    transform: rotate(45deg);
+  }
+}
+
+.footer-top--catalog { 
+  padding-bottom: 52px;
+
+  &::after { 
+    bottom: -1px;
+  }
+}
+
+.footer-copy--catalog { 
+  background-color: $cardBgColor;
+  padding-top: 20px;
+}
+
+
+//------------------------------PRODUCT-PAGE------------------------------------------
+
+.fancybox-container { 
+}
+
+.product-page { 
+  &__top { }
+
+  .slick-slider { 
+    display: flex;
+    align-items: center;
+  }
+
+  
+
+  &__gallery { 
+    width: 610px;
+    height: 550px;
+    border-radius: 5px;
+    background-color: $cardBgColor;
+
+    
+
+    .slick-list { 
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+    }
+
+    .slick-prev { 
+      transform: rotate(180deg);
+    }
+
+    .slick-arrow { 
+      position: relative;
+      width: 60px;
+      height: 60px;
+      font-size: 0;
+      
+      &::before { 
+        content: "";
+        position: absolute;
+        width: 19px;
+        height: 32px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url('../images/sprite.svg#icon-breadcrumbs-arrow');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: invert(19%) sepia(19%) saturate(963%) hue-rotate(197deg) brightness(99%) contrast(90%);
+      }
+    }
+  }
+
+  &__gallery--popup { 
+    position: absolute;
+    inset: 54px 96px;
+    z-index: 10;
+    padding: 54px 96px;
+    background-color: #000;
+  }
+
+  &__gallery-item { 
+    width: 100%;
+  }
+
+  &__gallery-img { 
+    object-fit: cover;
+  }
 }
