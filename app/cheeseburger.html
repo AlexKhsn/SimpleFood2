@@ -234,29 +234,65 @@
       <section class="product-page">
         <div class="product-page__top">
           <div class="container">
-            <ul class="product-page__gallery">
-              <li class="product-page__gallery-item">
-                <a class="product-page__gallery-link" href="#">
-                  <img class="product-page__gallery-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
-                </a>
-              </li>
-              
-              <li class="product-page__gallery-item">
-                <a class="product-page__gallery-link" href="#">
-                  <img class="product-page__gallery-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
-                </a>
-              </li>
-              
-              <li class="product-page__gallery-item">
-                <a class="product-page__gallery-link" href="#">
-                  <img class="product-page__gallery-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
-                </a>
-              </li>
-            </ul>
+            <div class="product-page__top-inner d-flex">
+              <ul class="product-page__gallery">
+                <li class="product-page__gallery-item">
+                  <a class="product-page__gallery-link" href="#" data-index="0">
+                    <img class="product-page__gallery-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
+                  </a>
+                </li>
+
+                <li class="product-page__gallery-item">
+                  <a class="product-page__gallery-link" href="#" data-index="1">
+                    <img class="product-page__gallery-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
+                  </a>
+                </li>
+
+                <li class="product-page__gallery-item">
+                  <a class="product-page__gallery-link" href="#" data-index="2">
+                    <img class="product-page__gallery-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
+                  </a>
+                </li>
+              </ul>
+
+              <div class="product-page__info">
+                <h1 class="sr-only">Заголовок первого уровня</h1>
+                <h2 class="sr-only">Заголовок второго уровня</h2>
+
+                <h3 class="title product-page__title">
+                  Чизбургер с листьями салата
+                </h3>
+
+                <div class="star">
+                  <span class="sr-only">
+                    Звездный рейтинг
+                  </span>
+                </div>
+
+                <span class="product-page__price">
+                  160
+                  <span class="product-page__price-currency">
+                    грн.
+                  </span>
+                </span>
+
+                <form class="product-page__buy" action="#">
+                  <button class="product-page__buy-btn product-page__buy-minus" type="button">
+                    -
+                  </button>
+
+                  <label class="sr-only" for="value">Поле ввода чисел</label>
+                  <input class="product-page__buy-input" name="value" id="value" type="number">
+
+                  <button class="product-page__buy-btn product-page__buy-plus" type="button">
+                    +
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="product-page__info"></div>
+        <div class="product-page__content"></div>
       </section>
 </main>
 

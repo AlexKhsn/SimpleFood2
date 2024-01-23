@@ -2220,10 +2220,12 @@
 
 //------------------------------PRODUCT-PAGE------------------------------------------
 
-.fancybox-container { 
-}
 
 .product-page { 
+  &__breadcrumbs { 
+    margin-bottom: 60px;
+  }
+
   &__top { }
 
   .slick-slider { 
@@ -2274,14 +2276,6 @@
     }
   }
 
-  &__gallery--popup { 
-    position: absolute;
-    inset: 54px 96px;
-    z-index: 10;
-    padding: 54px 96px;
-    background-color: #000;
-  }
-
   &__gallery-item { 
     width: 100%;
   }
@@ -2290,3 +2284,5 @@
     object-fit: cover;
   }
 }
+
+
