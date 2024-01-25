@@ -2226,7 +2226,19 @@
     margin-bottom: 60px;
   }
 
-  &__top { }
+  &__top { 
+    position: relative;
+
+    &::after { 
+      content: "";
+      position: absolute;
+      bottom: -60px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $productLineColor;
+    }
+  }
 
   &__top-inner { 
     justify-content: space-between;
@@ -2309,6 +2321,7 @@
   }
 
   &__star { 
+    z-index: -1;
     margin-bottom: 25px;
     padding: 0;
   }
@@ -2468,6 +2481,139 @@
       bottom: 3px;
     }
   }
+
+  &__tabs { 
+    padding-top: 91px;
+  }
+
+  &__tabs-inner { 
+    max-width: 690px;
+    margin: 0 auto;
+  }
+
+  &__tabs-list { 
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  &__tabs-item { 
+    &:not(:last-child) { 
+      margin-right: 60px;
+    }
+
+    font-size: 24px;
+    line-height: 1.5;
+    color: $titleColor;
+  }
+  
+  &__tabs-link--active { 
+    color: $primaryColor;
+  }
+
+  &__tabs-value { }
+
+  &__tabs-content { }
+
+  &__tabs-tab { }
+
+  &__tabs-descr { }
+
+  &__tabs-text { 
+    line-height: 1.5;
+
+    &:not(:last-child) { 
+      margin-bottom: 20px;
+    }
+  }
+
+  &__tabs-specifications { }
+
+  &__tabs-specification { 
+    line-height: 1.5;
+  }
+
+  &__tabs-label { 
+    @extend %rubik-500;
+  }
+
+  &__tabs-reviews { }
 }
 
+.carousel__dots { 
+  top: 100%;
+  transform: translateY(-400%);
+  height: 22px;
+}
 
+.carousel__dots > *:not(:last-child) { 
+  margin-right: 8px;
+}
+
+.carousel__dot.carousel__dot::after { 
+  width: 15px;
+  height: 15px;
+  background-color: $accentColor;
+  opacity: 1;
+}
+
+.carousel__dot.is-selected:after { 
+  background-color: $primaryColor;
+}
+
+.fancybox__container { 
+  padding: 54px 96px;
+  color: $accentColor;
+}
+
+.fancybox__viewport { 
+  background-color: #fff;
+}
+
+.fancybox__carousel { 
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.fancybox__carousel.has-dots { 
+  margin-bottom: 0;
+}
+
+.fancybox__backdrop { 
+  background: $borderColor;
+  opacity: 0.45;
+
+  @keyframes fancybox-fadeIn {
+    0% { 
+      opacity: 0;
+    }
+
+    100% { 
+      opacity: 0.45;
+    }
+  }
+}
+
+.carousel__button.is-close { 
+  top: 65px;
+  right: 110px;
+  color: rgba($borderColor, 0.15);
+
+  svg { 
+    stroke-width: 1px;
+  }
+}
+
+.carousel__button svg { 
+  filter: none;
+}
+
+.carousel__button.is-next,
+.carousel__button.is-prev { 
+  width: 60px;
+  height: 60px;
+  
+  svg { 
+    stroke-width: 2px;
+    stroke: $fancyArrowsColor;
+  }
+}

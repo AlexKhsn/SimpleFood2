@@ -620,7 +620,13 @@ Fancybox.bind('[data-fancybox="gallery"]', {
 
 
 
+function setValue() {
+  // Получаем элемент поля ввода
+  var inputElement = document.getElementById('value');
 
+  // Устанавливаем значение свойства 'value' элемента
+  inputElement.value = inputElement.value;
+}
 
 
 
@@ -637,4 +643,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mixContainer) {
         var mixer = mixitup(mixContainer);
     }
+});
+
+
+$('.product-page__tabs-link').on('click', function() { 
+  // Удаляем класс 'product-page__tabs-link--active' у всех ссылок
+  $('.product-page__tabs-link').removeClass('product-page__tabs-link--active');
+
+  // Добавляем класс 'product-page__tabs-link--active' только к текущей ссылке
+  $(this).addClass('product-page__tabs-link--active');
 });
