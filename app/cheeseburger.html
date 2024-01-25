@@ -213,7 +213,7 @@
     </header>
 
     <main class="main">
-      <div class="breadcrumbs">
+      <div class="breadcrumbs product-page__breadcrumbs">
         <div class="container">
           <ul class="breadcrumbs__list d-flex">
             <li class="breadcrumbs__item">
@@ -235,23 +235,17 @@
         <div class="product-page__top">
           <div class="container">
             <div class="product-page__top-inner d-flex">
-              <ul class="product-page__gallery">
-                <li class="product-page__gallery-item">
-                  <a class="product-page__gallery-link" href="#" data-index="0">
-                    <img class="product-page__gallery-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
-                  </a>
+              <ul class="product-page__carousel" id="myCarousel">
+                <li class="product-page__gallery-slide" data-src="../../images/content/product-page/cheeseburger.jpg" data-fancybox="gallery">
+                  <img class="product-page__carousel-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
                 </li>
 
-                <li class="product-page__gallery-item">
-                  <a class="product-page__gallery-link" href="#" data-index="1">
-                    <img class="product-page__gallery-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
-                  </a>
+                <li class="product-page__gallery-slide" data-src="../../images/content/product-page/cheeseburger.jpg" data-fancybox="gallery">
+                  <img class="product-page__carousel-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
                 </li>
 
-                <li class="product-page__gallery-item">
-                  <a class="product-page__gallery-link" href="#" data-index="2">
-                    <img class="product-page__gallery-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
-                  </a>
+                <li class="product-page__gallery-slide" data-src="../../images/content/product-page/cheeseburger.jpg" data-fancybox="gallery">
+                  <img class="product-page__carousel-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
                 </li>
               </ul>
 
@@ -263,7 +257,7 @@
                   Чизбургер с листьями салата
                 </h3>
 
-                <div class="star">
+                <div class="star product-page__star">
                   <span class="sr-only">
                     Звездный рейтинг
                   </span>
@@ -277,17 +271,47 @@
                 </span>
 
                 <form class="product-page__buy" action="#">
-                  <button class="product-page__buy-btn product-page__buy-minus" type="button">
-                    -
-                  </button>
-
                   <label class="sr-only" for="value">Поле ввода чисел</label>
-                  <input class="product-page__buy-input" name="value" id="value" type="number">
+                  <input class="product-page__buy-input" name="value" id="value" type="number" value="1" min="1" max="999">
 
-                  <button class="product-page__buy-btn product-page__buy-plus" type="button">
-                    +
+                  <button class="product-page__buy-btn" type="submit">
+                    <svg class="product-page__buy-img" width="16" height="16">
+                      <use xlink:href="images/sprite.svg#icon-cart"></use>
+                    </svg>
+
+                    <span class="product-page__buy-btn-label">
+                      Добавить в корзину
+                    </span>
                   </button>
                 </form>
+
+                <div class="product-page__delivery">
+                  <h4 class="product-page__delivery-title">
+                    Доставка и оплата
+                  </h4>
+
+                  <ul class="product-page__delivery-terms">
+                    <li class="product-page__delivery-item">
+                      Минимальная сумма заказа — 160 грн.
+                    </li>
+
+                    <li class="product-page__delivery-item">
+                      Время доставки заказа — 80-140 мин.
+                    </li>
+
+                    <li class="product-page__delivery-item">
+                      Оплата осуществляется только банковской картой.
+                    </li>
+
+                    <li class="product-page__delivery-item">
+                      Окончательная сумма заказа формируется после сбора товаров.
+                    </li>
+                  </ul>
+
+                  <a class="more product-page__delivery-more" href="#">
+                    Подробнее
+                  </a>
+                </div>
               </div>
             </div>
           </div>

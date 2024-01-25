@@ -1,3 +1,5 @@
+
+
 // Находим обе кнопки
 const button1 = document.getElementById('burger-btn1');
 const button2 = document.getElementById('burger-btn2');
@@ -407,13 +409,14 @@ $(function(){
 
   
 
-  $(".star").rateYo({
+  $(".product-page__star").rateYo({
     starWidth: "16px",
     readOnly: true,
     starSvg: '<svg class="icon"><use xlink:href="images/sprite.svg#icon-star"></use></svg>',
     rating: 4,
     ratedFill: '#FFB800',
     normalFill: "#C1C1C1",
+    spacing: '6px',
     });
 
   // $(".filter-range__input").ionRangeSlider({ 
@@ -501,12 +504,17 @@ $('.filter-select').styler();
   });
 });
 
-$(function() {
 
-  $('.product-page__buy').styler();
 
-});
+$('.product-page__buy-btn').styler();
 
+(function($) {
+  $(function() {
+  
+    $('.product-page__buy-input').styler();
+  
+  });
+  })(jQuery);
 
 
 
@@ -577,7 +585,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-$('.product-page__gallery').slick({
+$('.product-page__carousel').slick({
   dots: false,
   infinite: true,
   speed: 500,
@@ -585,6 +593,29 @@ $('.product-page__gallery').slick({
   cssEase: 'linear'
 });
 
+
+const myCarousel = new Carousel(document.querySelector("#myCarousel"), { 
+  preload: 2,
+  Dots: false,
+});
+
+
+Fancybox.bind('[data-fancybox="gallery"]', { 
+  Thumbs: false,
+  Toolbar: false,
+
+  closeButton: "top",
+  Carousel: { 
+    Dots: true,
+    on: { 
+      change: (that) => { 
+        myCarousel.slideTo(myCarousel.findPageForSlide(that.page), { 
+          friction: 0,
+        });
+      },
+    },
+  },
+});
 
 
 
