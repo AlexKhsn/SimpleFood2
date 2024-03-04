@@ -2,19 +2,19 @@
       <div class="header__fixed">
         <div class="container">
           <nav class="header__inner d-flex">
-            <a class="logo header__logo" href="#header">
+            <a class="logo header__logo" href="@if (context.page === 'home') {#header}@if (context.page === 'catalog') {index.html}@if (context.page === 'cheeseburger') {index.html}@if (context.page === 'beafburger') {index.html}@if (context.page === 'royal-cheeseburger') {index.html}@if (context.page === 'black-hamburger') {index.html}@if (context.page === 'chicken-burger') {index.html}">
               <img class="logo__img" src="./images/logo.svg" width="200" height="39" alt="Логотип сайта">
             </a>
 
             <ul class="menu header__menu d-flex">
               <li class="menu__item">
-                <a class="more animation-link menu__link menu__link--active" href="#header">
+                <a class="more animation-link menu__link @if (context.page === 'home') {menu__link--active}" href="@if (context.page === 'home') {#header}@if (context.page === 'catalog') {index.html}@if (context.page === 'cheeseburger') {index.html}@if (context.page === 'beafburger') {index.html}@if (context.page === 'royal-cheeseburger') {index.html}@if (context.page === 'black-hamburger') {index.html}@if (context.page === 'chicken-burger') {index.html}">
                   Главная
                 </a>
               </li>
 
               <li class="menu__item">
-                <a class="more animation-link menu__link" href="#">
+                <a class="more animation-link menu__link @if (context.page === 'catalog') {menu__link--active}" href="@if (context.page === 'home') {catalog.html}@if (context.page === 'catalog') {#header}@if (context.page === 'cheeseburger') {catalog.html}@if (context.page === 'beafburger') {catalog.html}@if (context.page === 'royal-cheeseburger') {catalog.html}@if (context.page === 'black-hamburger') {catalog.html}@if (context.page === 'chicken-burger') {catalog.html}">
                   Блюда
                 </a>
               </li>
@@ -71,7 +71,7 @@
         <div class="burger-menu__top">
           <div class="container">
             <div class="burger-menu__top-inner">
-              <a class="logo burger-menu__logo" href="#header">
+              <a class="logo burger-menu__logo" href="@if (context.page === 'home') {#header}@if (context.page === 'catalog') {index.html}@if (context.page === 'cheeseburger') {index.html}@if (context.page === 'beafburger') {index.html}@if (context.page === 'royal-cheeseburger') {index.html}@if (context.page === 'black-hamburger') {index.html}@if (context.page === 'chicken-burger') {index.html}">
                 <img class="logo__img" src="./images/logo.svg" width="200" height="39" alt="Логотип сайта">
               </a>
 
@@ -89,13 +89,13 @@
           <div class="container">
             <ul class="menu burger-menu__menu">
               <li class="menu__item">
-                <a class="more animation-link menu__link menu__link--active" href="#header">
+                <a class="more animation-link menu__link @if (context.page === 'home') {menu__link--active}" href="@if (context.page === 'home') {#header}@if (context.page === 'catalog') {index.html}@if (context.page === 'cheeseburger') {index.html}@if (context.page === 'beafburger') {index.html}@if (context.page === 'royal-cheeseburger') {index.html}@if (context.page === 'black-hamburger') {index.html}@if (context.page === 'chicken-burger') {index.html}">
                   Главная
                 </a>
               </li>
 
               <li class="menu__item">
-                <a class="more animation-link menu__link" href="#">
+                <a class="more animation-link menu__link @if (context.page === 'catalog') {menu__link--active}" href="@if (context.page === 'home') {catalog.html}@if (context.page === 'catalog') {#header}@if (context.page === 'cheeseburger') {catalog.html}@if (context.page === 'beafburger') {catalog.html}@if (context.page === 'royal-cheeseburger') {catalog.html}@if (context.page === 'black-hamburger') {catalog.html}@if (context.page === 'chicken-burger') {catalog.html}">
                   Блюда
                 </a>
               </li>

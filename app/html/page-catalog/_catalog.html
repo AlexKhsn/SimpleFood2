@@ -1,28 +1,18 @@
       <section class="catalog">
         <div class="container">
           <div class="catalog__top d-flex">
-            <h1 class="sr-only">
-              Заголовок первого уровня
+            <h1 class="title catalog__title">
+              Каталог продуктов
             </h1>
 
-            <h2 class="sr-only">
-              Заголовок второго уровня
-            </h2>
-
-            <h3 class="title catalog__title">
-              Каталог продуктов
-            </h3>
-
             <div class="catalog__filter-selects">
-              <label for="filter-sort sr-only"></label>
+              <button class="filter-btn" id="burger-btn3"></button>
 
               <select class="filter-select catalog__filter-sort" name="filter-select" id="filter-sort">
                 <option value="name">По названию</option>
                 <option value="cheap">От дешевых к дорогим</option>
                 <option value="expensive">От дорогих к дешевым</option>
               </select>
-
-              <label for="filter-quantity sr-only"></label>
 
               <select class="filter-select catalog__filter-quantity" name="filter-select" id="filter-quantity">
                 <option value="name">по 12</option>
@@ -34,10 +24,14 @@
 
           <div class="catalog__content d-flex">
             <div class="filter catalog__filters">
+              <button class="catalog__filters-btn" id="burger-btn4">
+                <span class="catalog__filters-btn-line"></span>
+              </button>
+
               <div class="filter-categories filter__item">
-                <h4 class="filter__title">
+                <h2 class="filter__title">
                   Категории
-                </h4>
+                </h2>
 
                 <ul class="filter-categories__list">
                   <li class="filter-categories__item">
@@ -91,9 +85,9 @@
               </div>
 
               <div class="filter-offers filter__item">
-                <h4 class="filter__title">
+                <h2 class="filter__title">
                   Предложения
-                </h4>
+                </h2>
 
                 <form class="filter-offers__form" action="#">
                   <label class="filter-offers__label" for="discount">
@@ -117,9 +111,9 @@
               </div>
 
               <div class="filter-range filter__item">
-                <h4 class="filter__title">
+                <h2 class="filter__title">
                   Цена
-                </h4>
+                </h2>
 
                 <form class="filter-range__form" action="#">
                   <div class="filter-range__extra-controls d-flex">
@@ -136,9 +130,9 @@
                     </div>
                   </div>
 
-                  <label class="filter-range__label" for="range">
-                    <input class="filter-range__input" name="range" id="range" type="text">
-                  </label>
+                  <label class="filter-range__label" for="range"></label>
+
+                  <input class="filter-range__input" name="range" id="range" type="text">
                 </form>
               </div>
             </div>
@@ -147,7 +141,7 @@
               <ul class="catalog__products">
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../cheeseburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger.png" width="140" height="140" alt="Чизбургер с листьями салата">
                       <h3 class="product-card__label">
                         Чизбургер с листьями салата
@@ -161,9 +155,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../beafburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger2.png" width="140" height="140" alt="Бифбургер">
                       <h3 class="product-card__label">
                         Бифбургер
@@ -177,9 +172,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../royal-cheeseburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger3.png" width="140" height="140" alt="Королевский чизбургер">
                       <h3 class="product-card__label">
                         Королевский чизбургер
@@ -194,9 +190,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../black-hamburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger4.png" width="140" height="140" alt="Черный гамбургер">
                       <h3 class="product-card__label">
                         Черный гамбургер
@@ -210,9 +207,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../cheeseburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger.png" width="140" height="140" alt="Чизбургер с листьями салата">
                       <h3 class="product-card__label">
                         Чизбургер с листьями салата
@@ -226,9 +224,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../beafburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger2.png" width="140" height="140" alt="Бифбургер">
                       <h3 class="product-card__label">
                         Бифбургер
@@ -242,9 +241,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../royal-cheeseburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger3.png" width="140" height="140" alt="Королевский чизбургер">
                       <h3 class="product-card__label">
                         Королевский чизбургер
@@ -259,9 +259,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../black-hamburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger4.png" width="140" height="140" alt="Черный гамбургер">
                       <h3 class="product-card__label">
                         Черный гамбургер
@@ -275,9 +276,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../cheeseburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger.png" width="140" height="140" alt="Чизбургер с листьями салата">
                       <h3 class="product-card__label">
                         Чизбургер с листьями салата
@@ -291,9 +293,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../beafburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger2.png" width="140" height="140" alt="Бифбургер">
                       <h3 class="product-card__label">
                         Бифбургер
@@ -307,9 +310,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../royal-cheeseburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger3.png" width="140" height="140" alt="Королевский чизбургер">
                       <h3 class="product-card__label">
                         Королевский чизбургер
@@ -324,9 +328,10 @@
                     </button>
                   </article>
                 </li>
+
                 <li class="catalog__products-item">
                   <article class="product-card popular-item d-flex">
-                    <a class="product-card__link d-flex" href="#">
+                    <a class="product-card__link d-flex" href="../black-hamburger.html">
                       <img class="product-card__img" src="./images/content/product-cards/burger4.png" width="140" height="140" alt="Черный гамбургер">
                       <h3 class="product-card__label">
                         Черный гамбургер

@@ -3,7 +3,7 @@
         <div class="container">
           <div class="footer-top__inner">
             <div class="footer-top__column">
-              <a class="logo footer-top__logo" href="#header">
+              <a class="logo footer-top__logo" href="@if (context.page === 'home') {#header}@if (context.page === 'catalog') {index.html}@if (context.page === 'cheeseburger') {index.html}@if (context.page === 'beafburger') {index.html}@if (context.page === 'royal-cheeseburger') {index.html}@if (context.page === 'black-hamburger') {index.html}@if (context.page === 'chicken-burger') {index.html}">
                 <img class="logo__img" src="./images/logo.svg" width="200" height="39" alt="Логотип">
               </a>
 

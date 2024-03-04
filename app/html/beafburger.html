@@ -1,24 +1,56 @@
+@include('components/_head.html', { 
+  "pageTitle": "Бифбургер"
+})
+@include('components/_header.html', { 
+  "page": "beafburger"
+})
+
+    <main class="main">
+      <div class="breadcrumbs">
+        <div class="container">
+          <ul class="breadcrumbs__list d-flex">
+            <li class="breadcrumbs__item">
+              <a class="more animation-link breadcrumbs__link" href="../../index.html">
+                Главная 
+              </a>
+            </li>
+
+            <li class="breadcrumbs__item">
+              <a class="more animation-link breadcrumbs__link" href="../catalog.html">
+                Каталог товаров
+              </a>
+            </li>
+
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link breadcrumbs__link--active" href="#">
+                Бифбургер
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div class="product-page">
         <div class="product-page__top">
           <div class="container">
             <div class="product-page__top-inner d-flex">
               <ul class="product-page__carousel" id="myCarousel">
-                <li class="product-page__gallery-slide" data-src="../../images/content/product-page/cheeseburger.jpg" data-fancybox="gallery">
-                  <img class="product-page__carousel-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
+                <li class="product-page__gallery-slide" data-src="../../images/content/product-page/beafburger.jpg" data-fancybox="gallery">
+                  <img class="product-page__carousel-img" src="../../images/content/product-page/beafburger.jpg" width="400" height="400" alt="Бифбургер">
                 </li>
 
-                <li class="product-page__gallery-slide" data-src="../../images/content/product-page/cheeseburger.jpg" data-fancybox="gallery">
-                  <img class="product-page__carousel-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
+                <li class="product-page__gallery-slide" data-src="../../images/content/product-page/beafburger.jpg" data-fancybox="gallery">
+                  <img class="product-page__carousel-img" src="../../images/content/product-page/beafburger.jpg" width="400" height="400" alt="Бифбургер">
                 </li>
 
-                <li class="product-page__gallery-slide" data-src="../../images/content/product-page/cheeseburger.jpg" data-fancybox="gallery">
-                  <img class="product-page__carousel-img" src="../../images/content/product-page/cheeseburger.jpg" width="400" height="400" alt="Чизбургер с листьями салата">
+                <li class="product-page__gallery-slide" data-src="../../images/content/product-page/beafburger.jpg" data-fancybox="gallery">
+                  <img class="product-page__carousel-img" src="../../images/content/product-page/beafburger.jpg" width="400" height="400" alt="Бифбургер">
                 </li>
               </ul>
 
               <div class="product-page__info">
                 <h1 class="title product-page__title">
-                  Чизбургер с листьями салата
+                  Бифбургер
                 </h1>
 
                 <div class="star product-page__star">
@@ -28,7 +60,7 @@
                 </div>
 
                 <span class="product-page__price">
-                  160
+                  190
                   <span class="product-page__price-currency">
                     грн.
                   </span>
@@ -56,7 +88,7 @@
 
                   <ul class="product-page__delivery-terms">
                     <li class="product-page__delivery-item">
-                      Минимальная сумма заказа — 160 грн.
+                      Минимальная сумма заказа — 190 грн.
                     </li>
 
                     <li class="product-page__delivery-item">
@@ -307,7 +339,7 @@
               
               <li class="product-page__offers-item d-flex">
                 <article class="product-card popular-item d-flex">
-                  <a class="product-card__link d-flex" href="#">
+                  <a class="product-card__link d-flex" href="../beafburger.html">
                     <img class="product-card__img" src="./images/content/product-cards/burger2.png" width="140" height="140" alt="Бифбургер">
 
                     <h3 class="product-card__label">
@@ -407,7 +439,7 @@
               
               <li class="product-page__offers-item d-flex">
                 <article class="product-card popular-item d-flex">
-                  <a class="product-card__link d-flex" href="#" target="_blank">
+                  <a class="product-card__link d-flex" href="../beafburger.html">
                     <img class="product-card__img" src="./images/content/product-cards/burger2.png" width="140" height="140" alt="Бифбургер">
 
                     <h3 class="product-card__label">
@@ -488,4 +520,10 @@
           </div>
         </div>
       </div>
+</main>
 
+@include('components/_footer.html', { 
+  "page": "cheeseburger"
+})
+
+@include('components/_footer-scripts.html')

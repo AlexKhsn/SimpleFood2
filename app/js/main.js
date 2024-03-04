@@ -71,63 +71,15 @@ window.addEventListener('resize', handleResize);
 window.addEventListener('load', handleResize);
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  var mixContainer = document.querySelector('.popular-categories__products');
 
-// // Глобальная переменная для хранения состояния слайдера
-// var isSliderInitialized = false;
-// var restaurantsList = $('.restaurants__list');
+    if (mixContainer) {
+        var mixer = mixitup(mixContainer);
 
-// // Инициализация Slick Slider
-// function initSlider() {
-//   if (restaurantsList.length && !isSliderInitialized) {
-//     restaurantsList.slick({
-//       dots: true,
-//       arrows: false,
-//       infinite: false,
-//       // Другие опции и настройки
-//     });
-
-//     isSliderInitialized = true;
-//   }
-// }
-
-// // Выключение Slick Slider
-// function destroySlider() {
-//   if (isSliderInitialized) {
-//     restaurantsList.slick('unslick');
-//     isSliderInitialized = false;
-//   }
-// }
-
-// // Проверка брейкпоинта и инициализация/уничтожение слайдера
-// function checkSlider() {
-//   if (window.matchMedia("(max-width: 559px)").matches) {
-//     initSlider();
-//   } else {
-//     destroySlider();
-//   }
-// }
-
-// // Вызов проверки при загрузке страницы
-// document.addEventListener('DOMContentLoaded', function() {
-//   checkSlider();
-// });
-
-// // Добавление обработчика события изменения размеров окна
-// window.addEventListener('resize', function() {
-//   checkSlider();
-// });
-
-
-// // Навешиваем обработчик изменения размера экрана
-// window.addEventListener('resize', handleResize);
-
-// // Вызываем функцию handleResize при загрузке страницы
-// window.addEventListener('load', handleResize);
-
-
-
-
-
+        console.log(mixer); 
+    };
+});
 
 
 // Функция для обновления/slick-инициализации слайдера
@@ -264,57 +216,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// // Глобальная переменная для хранения состояния слайдера
-// var isSliderInitialized = false;
-// var promotionList = $('.promotion__list');
-
-// // Инициализация Slick Slider
-// function initSlider() {
-//   if (promotionList.length && !isSliderInitialized) {
-//     promotionList.slick({
-//       dots: true,
-//       arrows: false,
-//       infinite: false,
-//       // Другие опции и настройки
-//     });
-
-//     isSliderInitialized = true;
-//   }
-// }
-
-// // Выключение Slick Slider
-// function destroySlider() {
-//   if (isSliderInitialized) {
-//     promotionList.slick('unslick');
-//     isSliderInitialized = false;
-//   }
-// }
-
-// // Проверка брейкпоинта и инициализация/уничтожение слайдера
-// function checkSlider() {
-//   if (window.matchMedia("(max-width: 559px)").matches) {
-//     initSlider();
-//   } else {
-//     destroySlider();
-//   }
-// }
-
-// // Вызов проверки при загрузке страницы
-// document.addEventListener('DOMContentLoaded', function() {
-//   checkSlider();
-// });
-
-// // Добавление обработчика события изменения размеров окна
-// window.addEventListener('resize', function() {
-//   checkSlider();
-// });
-
-
-// // Навешиваем обработчик изменения размера экрана
-// window.addEventListener('resize', handleResize);
-
-// // Вызываем функцию handleResize при загрузке страницы
-// window.addEventListener('load', handleResize);
 
 
 
@@ -338,6 +239,7 @@ function initPromotionSlider() {
     });
 
     isPromotionSliderInitialized = true;
+    updateSlideHeights(promotionList);
   }
 }
 
@@ -347,12 +249,27 @@ function initRestaurantsSlider() {
     restaurantsList.slick({
       dots: true,
       arrows: false,
-      infinite: false,
       // Другие опции и настройки
     });
 
     isRestaurantsSliderInitialized = true;
+    updateSlideHeights(restaurantsList);
   }
+}
+
+// Обновление высоты слайдов
+function updateSlideHeights(slider) {
+  var maxHeight = 0;
+  slider.find('.slick-slide').height('auto');
+  
+  slider.find('.slick-slide').each(function () {
+    var slideHeight = $(this).outerHeight();
+    if (slideHeight > maxHeight) {
+      maxHeight = slideHeight;
+    }
+  });
+
+  slider.find('.slick-slide').height(maxHeight);
 }
 
 // Выключение Slick Slider для акции
@@ -398,6 +315,15 @@ window.addEventListener('resize', handleResize);
 // Вызываем функцию handleResize при загрузке страницы
 window.addEventListener('load', handleResize);
 
+// Добавление обработчика события изменения размеров слайдера после переключения слайдов
+promotionList.on('afterChange', function(event, slick, currentSlide){
+  updateSlideHeights(promotionList);
+});
+
+restaurantsList.on('afterChange', function(event, slick, currentSlide){
+  updateSlideHeights(restaurantsList);
+});
+
 
 
 
@@ -419,6 +345,36 @@ $(function(){
     spacing: '6px',
     });
 
+
+  $(".product-page__reviews-star").rateYo({
+      starWidth: "16px",
+      readOnly: true,
+      starSvg: '<svg class="icon"><use xlink:href="images/sprite.svg#icon-star"></use></svg>',
+      ratedFill: '#FFB800',
+      normalFill: "#C1C1C1",
+      spacing: '6px',
+      });
+
+  $(".product-page__reviews-rate").rateYo({
+      starWidth: "16px",
+      starSvg: '<svg class="icon"><use xlink:href="images/sprite.svg#icon-star"></use></svg>',
+      ratedFill: '#FFB800',
+      normalFill: "#C1C1C1",
+      spacing: '6px',
+      });
+
+
+      function submitComment(event) {
+        var rating = $(".product-page__reviews-rate").rateYo("rating");
+        if (rating <= 0) {
+            alert("Пожалуйста, поставьте свою оценку!");
+            event.preventDefault(); // Предотвращаем отправку формы, если оценка не установлена
+        }
+        // Добавьте ваш код для отправки комментария, если оценка не равна 0
+    }
+    
+    // Подключаем обработчик события на форму
+    $('.product-page__reviews-form').on('submit', submitComment);
   // $(".filter-range__input").ionRangeSlider({ 
   //   type: "double",
   //   min: 0,
@@ -518,6 +474,83 @@ $('.product-page__buy-btn').styler();
 
 
 
+  $('.product-page__offers-carousel').on('init', function (event, slick) {
+    // Скрыть слайды с 7 по последний на брейкпоинте 560
+    if (window.innerWidth <= 560) {
+      slick.slickFilter(':lt(6)');
+    } else {
+      slick.slickUnfilter();
+    }
+  });
+  
+  $('.product-page__offers-carousel').slick({
+    // Ваши настройки слайдера
+    slidesToScroll: 5,
+    slidesToShow: 5,
+    prevArrow: $('.slick-prev'),
+    nextArrow: $('.slick-next'),
+    infinite: false,
+    variableHeight: true,
+    responsive: [
+      {
+        breakpoint: 560,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: false,
+          dots: true,
+          customPaging: function (slider, i) {
+            // Определяем, какие из точек отображать
+            if (i <= 2) {
+              return '<button>' + (i + 1) + '</button>';
+            } else {
+              return '';
+            }
+          },
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: false,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 4,
+        }
+      },
+    ]
+  });
+
+
+  
+
+  
+
+  $('.product-page__offers-carousel').on('setPosition', function () {	
+    console.log("ddd");
+      $(this).find('.product-page__offers-item').height('auto');		      
+      var slickTrack = $(this).find('.slick-track');		      
+      var slickTrackHeight = $(slickTrack).height();		      
+      $(this).find('.product-page__offers-item').css('height', slickTrackHeight + 'px');		      
+    });		
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   var activeNav = document.querySelector('.pagination__nav--active');
   var activeLink = document.querySelector('.pagination__link--active');
@@ -590,7 +623,15 @@ $('.product-page__carousel').slick({
   infinite: true,
   speed: 500,
   fade: true,
-  cssEase: 'linear'
+  cssEase: 'linear',
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        arrows: false,
+      }
+    },
+  ],
 });
 
 
@@ -637,19 +678,20 @@ function setValue() {
 
 
 
-var mixContainer = document.querySelector('.popular-categories__products');
-
-document.addEventListener('DOMContentLoaded', () => {
-    if (mixContainer) {
-        var mixer = mixitup(mixContainer);
-    }
-});
 
 
-$('.product-page__tabs-link').on('click', function() { 
+
+$('.product-page__tabs-link').on('click', function(e) { 
+  e.preventDefault();
   // Удаляем класс 'product-page__tabs-link--active' у всех ссылок
   $('.product-page__tabs-link').removeClass('product-page__tabs-link--active');
 
   // Добавляем класс 'product-page__tabs-link--active' только к текущей ссылке
   $(this).addClass('product-page__tabs-link--active');
+
+  $('.product-page__tabs-tab').removeClass('product-page__tabs-tab--active');
+
+  $($(this).attr('href')).addClass('product-page__tabs-tab--active');
 });
+
+
